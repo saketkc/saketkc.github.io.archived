@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[LaunchPad]]></title>
+  <title><![CDATA[Saket Choudhary's LaunchPad]]></title>
   <link href="http://saketkc.github.io/atom.xml" rel="self"/>
   <link href="http://saketkc.github.io/"/>
-  <updated>2014-10-08T15:11:30-07:00</updated>
+  <updated>2014-10-08T22:52:46-07:00</updated>
   <id>http://saketkc.github.io/</id>
   <author>
     <name><![CDATA[Saket Choudhary]]></name>
-    
+    <email><![CDATA[saketkc@gmail.com]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
