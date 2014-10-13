@@ -4,7 +4,7 @@
   <title><![CDATA[tekSophere]]></title>
   <link href="http://saketkc.github.io/atom.xml" rel="self"/>
   <link href="http://saketkc.github.io/"/>
-  <updated>2014-10-12T17:11:10-07:00</updated>
+  <updated>2014-10-12T17:15:24-07:00</updated>
   <id>http://saketkc.github.io/</id>
   <author>
     <name><![CDATA[Saket Choudhary]]></name>
@@ -50,6 +50,12 @@ The original sequence that was supposed to be sequenced was (50+150+50=) 250 bp 
     Fragment Size    = 20+50+150+50+20  = 290 
     Library Size     = 20+50+150+50+20  = 290
     Inner Mate Distance                 = 150            
+</code></pre>
+
+<p>Condensing:</p>
+
+<pre><code>    Insert Size = Sequence without the adapters(The original DNA chunk)
+    Fragment Size = Insert Size + Right/Left flanking adapters
 </code></pre>
 
 <p>Reference:
