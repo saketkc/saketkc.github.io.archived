@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Tutorial | tekSophere]]></title>
   <link href="http://saketkc.github.io/blog/categories/tutorial/atom.xml" rel="self"/>
   <link href="http://saketkc.github.io/"/>
-  <updated>2014-10-12T17:10:09-07:00</updated>
+  <updated>2014-10-12T17:11:10-07:00</updated>
   <id>http://saketkc.github.io/</id>
   <author>
     <name><![CDATA[Saket Choudhary]]></name>
@@ -42,7 +42,7 @@ Inner Mate Distance:                                      |==========150========
 </code></pre>
 
 <p>Sequencing chops the DNA into shorter <em>pieces</em>, and these <em>pieces</em> are ligated with adapter sequences.Though we started with <code>Piece to be sequenced</code> it was ligated with sequencing adapters on both sides.<br />
-The original sequence that was supposed to be sequenced was (50+150+50=) 250 bp long. However while the DNA was cut, the ligation step added extra bases at both ends of this <em>piece</em> so that it is now (20+50+150+50+20=) 290 bp long and this ‘piece+ligated sequence adapters’ are called ‘Fragment’(This is the reason I chose the word <em>‘piece’</em> to denote the part of DNA to be sequenced). Generally sequencing begins after adapter sequences. This is the reason R_1 and R_2 do not cover the 20 bp adapter sequences. In any case I assume the reads have been trimmed to remove the adapter sequences. The 150 bp sequence that is left <em>unsequenced</em> here i</p>
+The original sequence that was supposed to be sequenced was (50+150+50=) 250 bp long. However while the DNA was cut, the ligation step added extra bases at both ends of this <em>piece</em> so that it is now (20+50+150+50+20=) 290 bp long and this ‘piece+ligated sequence adapters’ are called ‘Fragment’(This is the reason I chose the word <em>‘piece’</em> to denote the part of DNA to be sequenced). Generally sequencing begins after adapter sequences. This is the reason R_1 and R_2 do not cover the 20 bp adapter sequences. In any case I assume the reads have been trimmed to remove the adapter sequences. The 150 bp sequence that is left <em>unsequenced</em> here is the distance between mate pairs, or the Inner Mate Distance.</p>
 
 <p>Summarizing with respect to the above example:</p>
 
