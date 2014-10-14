@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Bioinformatics, | tekSophere]]></title>
   <link href="http://saketkc.github.io/blog/categories/bioinformatics/atom.xml" rel="self"/>
   <link href="http://saketkc.github.io/"/>
-  <updated>2014-10-14T01:03:51-07:00</updated>
+  <updated>2014-10-14T01:05:09-07:00</updated>
   <id>http://saketkc.github.io/</id>
   <author>
     <name><![CDATA[Saket Choudhary]]></name>
@@ -58,7 +58,7 @@ formats are using the 0-based coordinate system.]</p>
 
 <pre><code>chrX  	|  A  |  T  |  G  |  C  |  A  |  T  |  C  |  G  |
 0-based	0  |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8
-1-based        1	 2     3     4     5     6     7     8
+1-based    1	     2     3     4     5     6     7     8
 </code></pre>
 
 <p>So expanding from the SAM1 specifications,</p>
@@ -166,7 +166,7 @@ In the past, these tables contained data related to sequence that is known to be
 E.g. chr21_gl000210_random.fa.gz
 </code></pre>
 
-<p>** ChrUn:**
+<p><strong>ChrUn:</strong>
     ChrUn contains clone contigs that can’t be confidently placed on a specific chromosome.
     E.g  chrUn_gl000237</p>
 
