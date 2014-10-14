@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>tekSophere</title>
+  <title>GRCh37 v/s Hg19 - tekSophere</title>
   <meta name="author" content="Saket Choudhary">
 
   
@@ -19,7 +19,7 @@ There are more insights here &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://saketkc.github.io">
+  <link rel="canonical" href="http://saketkc.github.io/blog/2014/10/14/grch37-v-slash-s-hg19">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="tekSophere" type="application/atom+xml">
@@ -72,15 +72,12 @@ There are more insights here &hellip;">
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2014/10/14/grch37-v-slash-s-hg19/">GRCh37 v/s Hg19</a></h1>
+      <h1 class="entry-title">GRCh37 v/s Hg19</h1>
     
     
       <p class="meta">
@@ -103,7 +100,7 @@ There are more insights here &hellip;">
   </header>
 
 
-  <div class="entry-content"><p>GRCh37 is <a href="See: http://seqanswers.com/forums/archive/index.php/t-9757.html">supposedly</a> the NCBI equivalent of UCSC’s hg19.</p>
+<div class="entry-content"><p>GRCh37 is <a href="See: http://seqanswers.com/forums/archive/index.php/t-9757.html">supposedly</a> the NCBI equivalent of UCSC’s hg19.</p>
 
 <p>However the forum posts on are not really convincing.
 There are more insights <a href="http://uswest.ensembl.org/Help/Faq?id=286">here</a></p>
@@ -304,22 +301,16 @@ pickle.dump(pickle_string, open('comparison_pickled.p', 'wb'))
 </code></pre></noscript></div>
 
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/10/12/library-size/">Library Size, Fragment Size, Insert Size</a></h1>
-    
-    
-      <p class="meta">
-        
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Saket Choudhary</span></span>
+
+      
 
 
 
@@ -331,75 +322,49 @@ pickle.dump(pickle_string, open('comparison_pickled.p', 'wb'))
   
 
 
-<time datetime="2014-10-12T13:51:01-07:00" pubdate data-updated="true"></time>
-        
-      </p>
+<time datetime="2014-10-14T00:06:21-07:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/bioinformatics/'>bioinformatics,</a>, <a class='category' href='/blog/categories/tutorials/'>tutorials,</a>
+  
+</span>
+
+
+    </p>
     
-  </header>
-
-
-  <div class="entry-content"><p>Bioinformatics has always been plagued with terms with multi-definitions for the same term. The FastQ format for example remained undocumented until Peter Cock et al. published <a href="http://nar.oxfordjournals.org/content/38/6/1767.long">The Sanger FASTQ file format for sequences with quality scores, and the Solexa/Illumina FASTQ variants</a> </p>
-
-<p>I will try to cover a detailed explanation of the following terms , which I have often found to be confusing, thanks to the lack of cohesiveness in Bioinformatics:</p>
-
-<ul>
-  <li>library size</li>
-  <li>fragment size</li>
-  <li>insert size</li>
-</ul>
-
-<p><a href="http://samtools.github.io/hts-specs/SAMv1.pdf">SAMv1 specification</a> defines a ‘TLEN’ term in the alignment section:
-&gt; TLEN: signed observed Template LENgth. If all segments are mapped to the same reference, the unsigned observed template length equals the number of bases from the leftmost mapped base to the rightmost mapped base. The leftmost segment has a plus sign and the rightmost has a minus sign. The sign of segments in the middle is undefined. It is set as 0 for single-segment template or when the information is unavailable.</p>
-
-<p>Going by this definition the ‘insert size’ <em>should</em> mean: The total length of the original <em>piece</em>  being sequenced(without adapters!).
-Let’s pick an example from <a href="http://seqanswers.com/forums/showthread.php?t=13098">Seqanswers</a>, slightly modified here. Reads R_1 and R_2 are paired end reads, sequencing the same sequence from two opposite ends. We want to sequence the ‘<em>Piece to be Sequenced</em>’.</p>
-
-<pre><code>Piece to be Sequenced:                       |=====50=====|==========150==========|=====50=====|
-Fragment=Piece + Sequencing Adapters: |~~20~~|=====50=====|==========150==========|=====50=====|~~20~~|    
-Reads(Paired End):                           |-----------&gt;|                       |&lt;-----------|    
-                                                  R_1                                  R_2
-Inner Mate Distance:                                      |==========150==========|         
-</code></pre>
-
-<p>Sequencing chops the DNA into shorter <em>pieces</em>, and these <em>pieces</em> are ligated with adapter sequences.Though we started with <code>Piece to be sequenced</code> it was ligated with sequencing adapters on both sides.<br />
-The original sequence that was supposed to be sequenced was (50+150+50=) 250 bp long. However while the DNA was cut, the ligation step added extra bases at both ends of this <em>piece</em> so that it is now (20+50+150+50+20=) 290 bp long and this ‘piece+ligated sequence adapters’ are called ‘Fragment’(This is the reason I chose the word <em>‘piece’</em> to denote the part of DNA to be sequenced). Generally sequencing begins after adapter sequences. This is the reason R_1 and R_2 do not cover the 20 bp adapter sequences. In any case I assume the reads have been trimmed to remove the adapter sequences. The 150 bp sequence that is left <em>unsequenced</em> here is the distance between mate pairs, or the Inner Mate Distance.</p>
-
-<p>Summarizing with respect to the above example:</p>
-
-<pre><code>    Insert Size      = 50+150+50        = 250
-    Fragment Size    = 20+50+150+50+20  = 290 
-    Library Size     = 20+50+150+50+20  = 290
-    Inner Mate Distance                 = 150            
-</code></pre>
-
-<p>Condensing:</p>
-
-<pre><code>    Insert           = Sequence without the adapters(The original DNA chunk)
-    Fragment         = Insert Size + Right/Left flanking adapters
-    Inner Mate       = Gap between the mate pair reads
-</code></pre>
-
-<p>Reference:
-<a href="http://seqanswers.com/forums/showthread.php?t=13098">Seqanswers</a></p>
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://saketkc.github.io/blog/2014/10/14/grch37-v-slash-s-hg19/" data-via="saketkc" data-counturl="http://saketkc.github.io/blog/2014/10/14/grch37-v-slash-s-hg19/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
 </div>
-  
-  
 
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/10/12/library-size/" title="Previous Post: library size, fragment size, insert size">&laquo; library size, fragment size, insert size</a>
+      
+      
+    </p>
+  </footer>
+</article>
 
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
 </div>
-<aside class="sidebar">
+
+  <aside class="sidebar">
    
   
     
   
 </aside>
+
 
 
     </div>
