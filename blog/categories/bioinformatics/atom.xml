@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Bioinformatics, | tekSophere]]></title>
   <link href="http://saketkc.github.io/blog/categories/bioinformatics/atom.xml" rel="self"/>
   <link href="http://saketkc.github.io/"/>
-  <updated>2014-10-22T07:41:36-07:00</updated>
+  <updated>2014-10-24T19:19:06-07:00</updated>
   <id>http://saketkc.github.io/</id>
   <author>
     <name><![CDATA[Saket Choudhary]]></name>
@@ -18,7 +18,7 @@
     <link href="http://saketkc.github.io/blog/2014/10/14/grch37-v-slash-s-hg19/"/>
     <updated>2014-10-14T00:06:21-07:00</updated>
     <id>http://saketkc.github.io/blog/2014/10/14/grch37-v-slash-s-hg19</id>
-    <content type="html"><![CDATA[<p>GRCh37 is <a href="See: http://seqanswers.com/forums/archive/index.php/t-9757.html">supposedly</a> the NCBI equivalent of UCSC’s hg19.</p>
+    <content type="html"><![CDATA[<p>GRCh37 is <a href="http://seqanswers.com/forums/archive/index.php/t-9757.html">supposedly</a> the NCBI equivalent of UCSC’s hg19.</p>
 
 <p>However the forum posts on are not really convincing.
 There are more insights <a href="http://uswest.ensembl.org/Help/Faq?id=286">here</a></p>
