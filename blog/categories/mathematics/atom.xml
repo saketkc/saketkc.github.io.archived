@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Mathematics | Science?!]]></title>
   <link href="http://saketkc.github.io/blog/categories/mathematics/atom.xml" rel="self"/>
   <link href="http://saketkc.github.io/"/>
-  <updated>2014-11-14T19:32:39-08:00</updated>
+  <updated>2014-11-14T19:33:06-08:00</updated>
   <id>http://saketkc.github.io/</id>
   <author>
     <name><![CDATA[Saket Choudhary]]></name>
@@ -22,7 +22,7 @@
 
 f(x) = 
 \begin{cases}
-1 & if\  a<x<b
+1 & if\  a<x<b\\
 0 & otherwise
 \end{cases}
  %]]&gt;</script>
