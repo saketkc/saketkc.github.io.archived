@@ -4,7 +4,7 @@
   <title><![CDATA[Science?!]]></title>
   <link href="http://saketkc.github.io/atom.xml" rel="self"/>
   <link href="http://saketkc.github.io/"/>
-  <updated>2014-11-14T19:21:33-08:00</updated>
+  <updated>2014-11-14T19:28:55-08:00</updated>
   <id>http://saketkc.github.io/</id>
   <author>
     <name><![CDATA[Saket Choudhary]]></name>
@@ -12,6 +12,25 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Markdown Test]]></title>
+    <link href="http://saketkc.github.io/blog/2014/11/14/markdown-test/"/>
+    <updated>2014-11-14T19:26:50-08:00</updated>
+    <id>http://saketkc.github.io/blog/2014/11/14/markdown-test</id>
+    <content type="html"><![CDATA[<script type="math/tex; mode=display">% &lt;![CDATA[
+
+\begin{math}
+f(x) = 
+\begin{cases}
+1 & if\  a<x<b
+0 & otherwise
+\end{cases}
+\end{math}
+
+ %]]&gt;</script>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[GRCh37 v/s Hg19]]></title>
