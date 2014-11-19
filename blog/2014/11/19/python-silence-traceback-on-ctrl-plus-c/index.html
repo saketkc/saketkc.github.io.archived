@@ -130,7 +130,7 @@ writing my donwloader for NCBI-SRA datasets(Should be on PyPI soon)</p>
 </span><span class="line"><span class="n">signal</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="n">signal</span><span class="o">.</span><span class="n">SIGINT</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">:</span> <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<h1 id="what-did-we-just-do">What did we just do?</h1>
+<h3 id="what-did-we-just-do">What did we just do?</h3>
 <p>using <code>signal.signal()</code> I set the <code>handler</code> to <code>sys.exit(0)</code> for <code>signal.SIGINT</code>
 which is translated to a <code>KeyBoardInterrupt</code> exception(invoked when you do a <code>Ctrl+C</code>)</p>
 
