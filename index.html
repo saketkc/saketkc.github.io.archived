@@ -9,8 +9,10 @@
   <meta name="author" content="Saket Choudhary">
 
   
-  <meta name="description" content="Came across this small little hack while writing my donwloader for NCBI-SRA datasets(Should be on PyPI soon)
-&lt;div class='bogus-wrapper'&gt;&lt;div &hellip;">
+  <meta name="description" content="Came across this small little hack while writing my donwloader for NCBI-SRA datasets(Should be on PyPI soon) 1
+2
+import signal
+signal.signal(signal. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -123,11 +125,13 @@ MathJax.Hub.Config({
 
 
   <div class="entry-content"><p>Came across this small little hack while 
-writing my donwloader for NCBI-SRA datasets(Should be on PyPI soon)
-&lt;div class=&#8217;bogus-wrapper&#8217;&gt;<notextile><figure class="code">&lt;div class=&#8221;highlight&#8221;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#8221;gutter&#8221;&gt;&lt;pre class=&#8221;line-numbers&#8221;&gt;<span class="line-number">1</span>
+writing my donwloader for NCBI-SRA datasets(Should be on PyPI soon)</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;<code class=""><span class="line">import signal
-</span><span class="line">signal.signal(signal.SIGINT, lambda x,y: sys.exit(0))</span></code>&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</figure></notextile>&lt;/div&gt;</p>
+</pre></td><td class="code"><pre><code class="python"><span class="line"><span class="kn">import</span> <span class="nn">signal</span>
+</span><span class="line"><span class="n">signal</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="n">signal</span><span class="o">.</span><span class="n">SIGINT</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">:</span> <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <h1 id="what-did-we-just-do">What did we just do?</h1>
 <p>using <code>signal.signal()</code> I set the <code>handler</code> to <code>sys.exit(0)</code> for <code>signal.SIGINT</code>
