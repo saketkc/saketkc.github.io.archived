@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Hacks | Science?!]]></title>
   <link href="http://saketkc.github.io/blog/categories/hacks/atom.xml" rel="self"/>
   <link href="http://saketkc.github.io/"/>
-  <updated>2014-12-29T13:01:11-08:00</updated>
+  <updated>2014-12-30T13:02:34-08:00</updated>
   <id>http://saketkc.github.io/</id>
   <author>
     <name><![CDATA[Saket Choudhary]]></name>
@@ -18,8 +18,8 @@
     <link href="http://saketkc.github.io/blog/2014/11/19/python-silence-traceback-on-ctrl-plus-c/"/>
     <updated>2014-11-19T00:44:50-08:00</updated>
     <id>http://saketkc.github.io/blog/2014/11/19/python-silence-traceback-on-ctrl-plus-c</id>
-    <content type="html"><![CDATA[<p>Came across this small little hack while 
-writing my donwloader for NCBI-SRA datasets(Should be on PyPI soon)</p>
+    <content type="html"><![CDATA[<p>I came across this small little hack while 
+writing my downloader for NCBI-SRA datasets(Should be on PyPI soon!)</p>
 
 <p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
