@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Python, | Science?!]]></title>
   <link href="http://saketkc.github.io/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://saketkc.github.io/"/>
-  <updated>2014-12-30T13:02:34-08:00</updated>
+  <updated>2014-12-31T13:03:29-08:00</updated>
   <id>http://saketkc.github.io/</id>
   <author>
     <name><![CDATA[Saket Choudhary]]></name>
@@ -29,7 +29,7 @@ writing my downloader for NCBI-SRA datasets(Should be on PyPI soon!)</p>
 
 <h3 id="what-did-we-just-do">What did we just do?</h3>
 <p>using <code>signal.signal()</code> I set the <code>handler</code> to <code>sys.exit(0)</code> for <code>signal.SIGINT</code>
-which is translated to a <code>KeyBoardInterrupt</code> exception(invoked when you do a <code>Ctrl+C</code>)</p>
+which is translated to a <code>KeyBoardInterrupt</code> exception(invoked on a <code>Ctrl+C</code> press)</p>
 
 <p>Read more about the <code>signal</code> module <a href="https://docs.python.org/2/library/signal.html">here</a>.</p>
 ]]></content>
