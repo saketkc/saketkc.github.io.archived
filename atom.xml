@@ -4,7 +4,7 @@
   <title><![CDATA[Science?!]]></title>
   <link href="http://saketkc.github.io/atom.xml" rel="self"/>
   <link href="http://saketkc.github.io/"/>
-  <updated>2015-01-02T13:36:39-08:00</updated>
+  <updated>2015-01-02T13:37:31-08:00</updated>
   <id>http://saketkc.github.io/</id>
   <author>
     <name><![CDATA[Saket Choudhary]]></name>
@@ -36,9 +36,9 @@ which is translated to a <code>KeyBoardInterrupt</code> exception(invoked on a <
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[$$ Ex$$ Markdown Test]]></title>
+    <title type="html"><![CDATA[Markdown Test]]></title>
     <link href="http://saketkc.github.io/blog/2014/11/14/markdown-test/"/>
-    <updated>2014-11-14T19:26:50-08:00</updated>
+    <updated>2014-11-14T00:00:00-08:00</updated>
     <id>http://saketkc.github.io/blog/2014/11/14/markdown-test</id>
     <content type="html"><![CDATA[<script type="math/tex; mode=display">% &lt;![CDATA[
 
