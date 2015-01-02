@@ -163,7 +163,68 @@ words, the range is limited to <script type="math/tex">[0,1]</script>.</p>
 
 <h3 id="tanimoto-similarity">Tanimoto similarity</h3>
 
-<p><a href="http://www.sciencemag.org/content/132/3434/1115">A computer program for Classifying plants</a> describes Tanimoto similairty </p>
+<p><a href="http://www.sciencemag.org/content/132/3434/1115">A computer program for Classifying plants</a> describes Tanimoto similarity using bit arrays
+where each bit is a representative of the presence(1) or absence(0) of the plant. </p>
+
+<script type="math/tex; mode=display">tSIM(A,B)=\frac{\sum_i(A_i \land B_i)}{\sum_i(A_i \lor B_i)}</script>
+
+<p>Thus tanimato similarity is simply defined as the ratio of total number of common bits set to 1 to the total number of bits set to 1 in either(or both) of the vectors.</p>
+
+<h3 id="tanimato-similarity-vs-jacard-similarity">Tanimato similarity v/s Jacard similarity</h3>
+
+<p>A = [“mary”, “little”, “girl”]
+B = [“mary”, “had”, “a”, “little”, “lamb”, “which”, “bleat”]</p>
+
+<script type="math/tex; mode=display">jSIM(A,B) = \frac{2}{8}</script>
+
+<p>Now just similar to the plants context for Tanimato similarity, our plants are: [“mary”, “had”, “a”, “little”, “lamb”, “which”, “bleat”, “girl”]
+and thus, the corresponding bit vectors are:
+A = [1,0,0,1,0,0,0,1]
+B = [1,1,1,1,1,1,1,0]</p>
+
+<script type="math/tex; mode=display">tSIM(A,B) = \frac{1+0+0+1+0+0+0+0}{1+1+1+1+1+1+1+1} = \frac{2}{8}</script>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Also note, $$</td>
+      <td>A</td>
+      <td>= 3<script type="math/tex">, </script></td>
+      <td>B</td>
+      <td>= 7<script type="math/tex">, and </script></td>
+      <td>A\cap B</td>
+      <td>= 2$$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>So <script type="math/tex">jSIM, tSIM</script> are in fact <em>one and the same</em></p>
+
+<p>In fact if jacard similarity were to be written for bit arrays:</p>
+
+<script type="math/tex; mode=display">jSIM(A,B) = \frac{|A \cap B|}{A \cup B|} = \frac{A .B}{|A| + |B| - |A \cap B|}</script>
+
+<p>where <script type="math/tex">A.B = \sum_i(A_iB_i) = A \cup B</script>
+denominator is trivial.</p>
+
+<p>More generally, tanimato or jacard simialruty is given by:</p>
+
+<script type="math/tex; mode=display">SIM(A,B) = \frac{A.B}{||A||^2 + ||B||^2 - A.B}</script>
+
+<h4 id="tanimato-distance">Tanimato distance</h4>
+
+<script type="math/tex; mode=display">D_T(A,B)=-log_2(T(A,B))</script>
+
+<p>To quote wikipedia <a href="http://en.wikipedia.org/wiki/Jaccard_index#Tanimoto_similarity_and_distance">Wikipedia</a>
+&lt;div class=&#8217;bogus-wrapper&#8217;&gt;<notextile><figure class="code">&lt;div class=&#8221;highlight&#8221;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#8221;gutter&#8221;&gt;&lt;pre class=&#8221;line-numbers&#8221;&gt;<span class="line-number">1</span>
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;<code class=""><span class="line">This coefficient is, deliberately, not a distance metric. It is chosen to allow the possibility of two specimens, which are quite different from each other, to both be similar to a third. It is easy to construct an example which disproves the property of triangle inequality.</span></code>&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</figure></notextile>&lt;/div&gt;</p>
+
+<p><em>Wrong</em> definition:</p>
+
+<p>Tanimato distance is often confused with Jacard distance and maybe wrongly defined as <script type="math/tex">D_T(A,B)=1-tSIM(A,B)</script>, thus leading to the wrong conclusion that tanimato 
+distance is indeed a distance metric, when it is not.</p>
+
+<script type="math/tex; mode=display">D_J(A,B) = 1-\frac{|A \cap B|}{|A \cup B|} = \frac{|A \cup B| - |A \cap B|}{A \cup B|} = \frac{|A| + |B| - 2|A \cap B|}{|A| + |B| - |A \cap B|}</script>
 
 
   
