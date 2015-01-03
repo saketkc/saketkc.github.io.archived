@@ -226,6 +226,23 @@ distance is indeed a distance metric, when it is not.</p>
 
 <script type="math/tex; mode=display">D_J(A,B) = 1-\frac{|A \cap B|}{|A \cup B|} = \frac{|A \cup B| - |A \cap B|}{A \cup B|} = \frac{|A| + |B| - 2|A \cap B|}{|A| + |B| - |A \cap B|}</script>
 
+<h2 id="a-warmup-problem">A warmup problem</h2>
+<p>Taken from <a href="http://infolab.stanford.edu/~ullman/mmds/booka.pdf">Chapter 3 of Ullman’s Mining Massive Datasets</a>
+&lt;div class=&#8217;bogus-wrapper&#8217;&gt;<notextile><figure class="code">&lt;div class=&#8221;highlight&#8221;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#8221;gutter&#8221;&gt;&lt;pre class=&#8221;line-numbers&#8221;&gt;<span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;<code class=""><span class="line">Suppose we have a universal set U of n elements, and we
+</span><span class="line">choose two subsets S and T at random, each with m of the n elements. What
+</span><span class="line">is the expected value of the Jaccard similarity of S and T
+</span></code>&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</figure></notextile>&lt;/div&gt;</p>
+
+<p>Solution:</p>
+
+<script type="math/tex; mode=display">P(S \cap T = k) = \frac{m \choose k * (n-m) \choose (m-k)}{n \choose m * n \choose m}</script>
+
+<script type="math/tex; mode=display">jSIM_k(S,T) = \frac{k}{m + (m-k)}</script>
+
+<p>Thus <script type="math/tex">E(jSIM(S,T)) = \sum_k jSIM_k * P(S\cap T = k) = \sum_{k=1}^{m} \frac{k}{2m-k} * \frac{m \choose k * (n-m) \choose (m-k)}{n \choose m} </script> </p>
 
   
     <footer>
