@@ -118,21 +118,31 @@ matches. Sequences A and B are represented as <script type="math/tex">(A_1, A_2,
 k = length of matches
 t = length of allowable mismatches</p>
 
-<h2 id="lsh">LSH</h2>
+<h2 id="jaccard-similarity">Jaccard Similarity</h2>
 
 <p>Jaccard similarity: Notion of similarity that associates similarity of sets with the relative size of their intersection
 A comman example would be determining if a document is a plagiarised copy of another, if not identical. The technique 
 used to convert these documents to a set intersection problem is referred to as “shingling”</p>
 
-<h3 id="jaccard-similarity">Jaccard Similarity</h3>
-<p>Jaccard similarity = <script type="math/tex">jSIM(S,T) = \frac{|S \cap T|}{|S \cup T|}</script></p>
+<table>
+  <tbody>
+    <tr>
+      <td>Jaccard similarity = $$jSIM(S,T) = \frac{</td>
+      <td>S \cap T</td>
+      <td>}{</td>
+      <td>S \cup T</td>
+      <td>}$$</td>
+    </tr>
+  </tbody>
+</table>
 
 <p>Let <script type="math/tex">S=[1,2,3]</script> and <script type="math/tex">T=[2,3,4,5,6]</script> then <script type="math/tex">SIM(S,T)=\frac{2}{6}</script></p>
 
 <h4 id="jacard-distance">Jacard distance</h4>
+
 <p><script type="math/tex">D_J(A,B) = 1 - jSIM(A,B)</script> and is a distance metric.</p>
 
-<h3 id="cosine-similarity">Cosine Similarity</h3>
+<h2 id="cosine-similarity">Cosine Similarity</h2>
 
 <p>As the name suggests, cosine similarity relies on taking cosines between two given vectors to infer the similarity.
 The range for cosine is [-1,1] When used in positive space it is [0,1]</p>
@@ -140,7 +150,7 @@ The range for cosine is [-1,1] When used in positive space it is [0,1]</p>
 <p>Thinking in terms of document matching, a document can be represented as a vector of words, where the “words” form the unit vectorsand the 
 associated scalar is the frequency of the word.</p>
 
-<h4 id="cosine-distance">Cosine distance</h4>
+<h3 id="cosine-distance">Cosine distance</h3>
 
 <p><script type="math/tex">D_C(A,B)=1-S_C(A,B)</script> but is not a metric since it does not follow the triangular inequality <script type="math/tex">d(x,z) \leq d(x,y)+d(y,z)</script>, neither does it
 follow the coincidence axiom <script type="math/tex">d(x,y)=0 iff\ x=y</script>$ since cosine(x,y)=0 if <script type="math/tex">x \perp y</script></p>
@@ -150,7 +160,7 @@ follow the coincidence axiom <script type="math/tex">d(x,y)=0 iff\ x=y</script>$
 <p><script type="math/tex">Range(cSIM(A,B))=[-1,1]</script> where -1 means entirely opposite, 1 means ‘exactly similar’. In a positive space, such as when using the frequencies of
 words, the range is limited to <script type="math/tex">[0,1]</script>.</p>
 
-<h3 id="angular-similarity">Angular similarity</h3>
+<h2 id="angular-similarity">Angular similarity</h2>
 <p>For vectors in positive+negative space: </p>
 
 <script type="math/tex; mode=display">aSIM(A,B)=1-\frac{cos^{-1}(cSIM(A,B))}{\pi}</script>
@@ -159,10 +169,10 @@ words, the range is limited to <script type="math/tex">[0,1]</script>.</p>
 
 <script type="math/tex; mode=display">aSIM(A,B)=1-\frac{2.cos^{-1}(cSIM(A,B))}{\pi}</script>
 
-<h4 id="angular-difference-coefficient">Angular difference coefficient</h4>
+<h3 id="angular-difference-coefficient">Angular difference coefficient</h3>
 <p><script type="math/tex">D_A(A,B) = 1-aSIM(A,B)</script> and <em>is</em> a distance metric</p>
 
-<h3 id="tanimoto-similarity">Tanimoto similarity</h3>
+<h2 id="tanimoto-similarity">Tanimoto similarity</h2>
 
 <p><a href="http://www.sciencemag.org/content/132/3434/1115">A computer program for Classifying plants</a> describes Tanimoto similarity using bit arrays
 where each bit is a representative of the presence(1) or absence(0) of the plant. </p>
@@ -171,7 +181,7 @@ where each bit is a representative of the presence(1) or absence(0) of the plant
 
 <p>Thus tanimato similarity is simply defined as the ratio of total number of common bits set to 1 to the total number of bits set to 1 in either(or both) of the vectors.</p>
 
-<h3 id="tanimato-similarity-vs-jacard-similarity">Tanimato similarity v/s Jacard similarity</h3>
+<h2 id="tanimato-similarity-vs-jacard-similarity">Tanimato similarity v/s Jacard similarity</h2>
 
 <p>A = [“mary”, “little”, “girl”]
 B = [“mary”, “had”, “a”, “little”, “lamb”, “which”, “bleat”]</p>
@@ -212,7 +222,7 @@ denominator is trivial.</p>
 
 <script type="math/tex; mode=display">SIM(A,B) = \frac{A.B}{||A||^2 + ||B||^2 - A.B}</script>
 
-<h4 id="tanimato-distance">Tanimato distance</h4>
+<h3 id="tanimato-distance">Tanimato distance</h3>
 
 <script type="math/tex; mode=display">D_T(A,B)=-log_2(T(A,B))</script>
 
