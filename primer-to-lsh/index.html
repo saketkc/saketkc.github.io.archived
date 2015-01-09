@@ -204,7 +204,7 @@ B = [1,1,1,1,1,1,1,0]</p>
       <td>B</td>
       <td>= 7<script type="math/tex">, and </script></td>
       <td>A\cap B</td>
-      <td>= 2$$</td>
+      <td>= 2 $$</td>
     </tr>
   </tbody>
 </table>
@@ -242,11 +242,11 @@ distance is indeed a distance metric, when it is not.</p>
 
 <h3 id="solution">Solution:</h3>
 
-<script type="math/tex; mode=display">P(S \cap T = k) = \frac{m \choose k * (n-m) \choose (m-k)}{n \choose m * n \choose m}</script>
+<script type="math/tex; mode=display"> P(S \cap T = k) = \frac{m \choose k * (n-m) \choose (m-k)}{n \choose m * n \choose m} </script>
 
-<script type="math/tex; mode=display">jSIM_k(S,T) = \frac{k}{m + (m-k)}</script>
+<script type="math/tex; mode=display"> jSIM_k(S,T) = \frac{k}{m + (m-k)} </script>
 
-<p>Thus <script type="math/tex">E(jSIM(S,T)) = \sum_k jSIM_k * P(S\cap T = k) = \sum_{k=1}^{m} \frac{k}{2m-k} * \frac{m \choose k * (n-m) \choose (m-k)}{n \choose m} </script> </p>
+<p>Thus <script type="math/tex"> E(jSIM(S,T)) = \sum_k jSIM_k * P(S\cap T = k) = \sum_{k=1}^{m} \frac{k}{2m-k} * \frac{m \choose k * (n-m) \choose (m-k)}{n \choose m} </script> </p>
 
   
     <footer>
