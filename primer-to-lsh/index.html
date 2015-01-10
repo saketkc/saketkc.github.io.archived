@@ -9,8 +9,7 @@
   <meta name="author" content="Saket Choudhary">
 
   
-  <meta name="description" content="Primer to LSH $
-The statistic is characterized by number of matches of length k between any two sequences and allowing upto mis
+  <meta name="description" content="Primer to LSH The statistic is characterized by number of matches of length k between any two sequences and allowing upto mis
 matches. Sequences A &hellip;">
   
 
@@ -109,7 +108,7 @@ MathJax.Hub.Config({
 <time datetime="2015-01-02T19:31:00-08:00" pubdate data-updated="true"></time></p>
   </header>
   
-  <h2 id="d2"><script type="math/tex">D_2</script>$</h2>
+  <h2 id="d2"><script type="math/tex">D_2</script></h2>
 <p>The <script type="math/tex">D_2</script> statistic is characterized by number of matches of length k between any two sequences <script type="math/tex">A</script> and <script type="math/tex">B</script> allowing upto <script type="math/tex">t</script> mis
 matches. Sequences A and B are represented as <script type="math/tex">(A_1, A_2, A_3, ... A_n_A) and (B_1, B_2, B_3, ...., B_n_B)</script> respectively.</p>
 
@@ -139,7 +138,7 @@ used to convert these documents to a set intersection problem is referred to as 
 
 <p>Let <script type="math/tex">S=[1,2,3]</script> and <script type="math/tex">T=[2,3,4,5,6]</script> then <script type="math/tex">SIM(S,T)=\frac{2}{6}</script></p>
 
-<h4 id="jacard-distance">Jacard distance</h4>
+<h4 id="jaccard-distance">Jaccard distance</h4>
 
 <p><script type="math/tex">D_J(A,B) = 1 - jSIM(A,B)</script> and is a distance metric.</p>
 
@@ -243,10 +242,11 @@ distance is indeed a distance metric, when it is not.</p>
 
 <h3 id="solution">Solution:</h3>
 
-<script type="math/tex; mode=display"> P( S \cap T = k) = \frac{(m \choose k) . ((n-m) \choose (m-k))}{(n \choose m) * (n \choose m)}</script>
+<script type="math/tex; mode=display">P(S \cap T = k) = \frac{ {m \choose k} * {(n-m) \choose (m-k)} }{ {n \choose m} * {n \choose m} }</script>
 
 <script type="math/tex; mode=display"> jSIM_k(S,T) = \frac{k}{m + (m-k)} </script>
 
+<p>Thus <script type="math/tex"> E(jSIM(S,T)) = \sum_k jSIM_k * P(S\cap T = k) = \sum_{k=1}^{m} \frac{k}{2m-k} *  \frac{ {m \choose k} * {(n-m) \choose (m-k)} }{ {n \choose m} * {n \choose m} }</script></p>
 
   
     <footer>
