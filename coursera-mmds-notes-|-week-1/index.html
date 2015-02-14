@@ -236,7 +236,73 @@ Hard: distributed computing is hard!</p>
   <li>Group by key: (word,1), (word,1); (word2,1), (word2,1)</li>
   <li>Reduce : (word, sigma(word))</li>
   <li>REMEMEBER: All this happens across nodes on different chunks, reading isn’t sequential, but parallel!</li>
+  <li>Multiple map nodes, multiple reduce nodes</li>
+  <li>Sysmte uses a hash function to hash each key such that all tuples with same keys 
+land in the same reducer node. So all (word,x) intance go to node 1, (word2,y) goto node 2 etc.</li>
+  <li>Final result also spread across different nodes, as expected</li>
+  <li>the magic happens because rather than randomly accessing the disk, it is being 
+accessed sequentially</li>
+  <li>Sequential reads are much much more efficient than random access.</li>
+  <li>Reading randomly would have require higher number of file.seek operations</li>
 </ul>
+
+<h2 id="psuedocode">Psuedocode</h2>
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">map(key, value)
+</span><span class="line">    @key: doc name
+</span><span class="line">    @value: text in doc
+</span><span class="line">    for word in value.split():
+</span><span class="line">        yield((word,1))
+</span><span class="line">
+</span><span class="line">reduce(key, value:)
+</span><span class="line">    result = 0
+</span><span class="line">    for each count v in values:
+</span><span class="line">        result+=v
+</span><span class="line">    yield((key, result))</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h2 id="dataflow">DataFlow</h2>
+<ul>
+  <li>Input, Output: on DFS</li>
+  <li>Scheduler maps task close to physical storage</li>
+  <li>Intermediate REsults: Local FS of workers</li>
+  <li>Coordianted by Master node
+    <ul>
+      <li>Task status: Idle, complete, in-progress</li>
+      <li>Idle tasks get sheduled as workers are made available</li>
+      <li>on completeion of a task, the master sends the intermediate files to
+  reducer</li>
+      <li>Pings workers to check status of failures</li>
+      <li>Map worker failure: Master reset status of all jobs either complete or in-progress 
+  on that node to idle</li>
+      <li>Reduce worker faiure: Only need to reset status of in-progress tasks</li>
+      <li>Idle tasks rescheduled</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="number-of-tasks">Number of Tasks</h2>
+<ul>
+  <li>M map tasks, R reduce tasks</li>
+  <li>Rule of thumb: <script type="math/tex">M>>n</script>, n=number of nodes In fact: one task per chunk
+    <ul>
+      <li>Why? If 1 task/node and one task fails, it has to wait for the remaining n-1 
+  to complete before getting rescheduled</li>
+    </ul>
+  </li>
+  <li><script type="math/tex">% <![CDATA[
+R<<M %]]></script>, makes sense to spread output to less number of nodes.</li>
+</ul>
+
 
   
     <footer>
