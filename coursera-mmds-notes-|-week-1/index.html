@@ -303,6 +303,49 @@ accessed sequentially</li>
 R<<M %]]></script>, makes sense to spread output to less number of nodes.</li>
 </ul>
 
+<h2 id="refiningcombiners">Refining:Combiners</h2>
+<ul>
+  <li>Combiner acts after mapper to pre-process before shufflineg, also provided by the prgrammer</li>
+  <li>Helps reduce tranfer overheads, network time</li>
+  <li>Combiner is same as recduer$i</li>
+  <li>Combining is intuitive and works for associative, commutative functions</li>
+  <li>Consider reducer task of taking an average, You ask the combiner to return the (sum, count) tuple</li>
+  <li>Calculating median: Not possible using only combiners!</li>
+</ul>
+
+<h2 id="refining-shuffler">Refining: Shuffler</h2>
+<p>Used for deciding which key-value pairs goes to which reducer
+- Naive approach for hashing: hash(key) mod R <script type="math/tex">\belongsto [0,R-1]</script>-</p>
+
+<h2 id="pagerank-flow">PageRank:: Flow</h2>
+<ul>
+  <li>If page j with important <script type="math/tex">r_j</script> has n outlinks, each links
+get <script type="math/tex">\frac{r_j}{n}</script> votes</li>
+  <li>Page j’s own importantortance is sigma of it’s in-links</li>
+  <li>It’s a cycle: Page is important if pointed to by other importatn ones</li>
+</ul>
+
+<p><script type="math/tex">r_j = \sum_{i\longrightarrow j}\frac{r_i}{d_i}</script> where <script type="math/tex">d_i</script> is the out degree of node i</p>
+
+<h2 id="page-rank-matrix-formulation">Page Rank: Matrix Formulation</h2>
+<ul>
+  <li>M = stochastic adj matrix,</li>
+  <li>If <script type="math/tex">\i \longrightarrow j</script> then <script type="math/tex">M_{ji}=\frac{1}{d_i}</script>  else $$M_{ji}$=0$i</li>
+  <li><script type="math/tex">$r_i</script> is the rank of page i</li>
+  <li>Contraint: <script type="math/tex">\sum r_i=1</script></li>
+  <li>
+    <script type="math/tex; mode=display"> r = M.r</script>
+  </li>
+  <li>Clearly, r is  a principle eign vector of M</li>
+</ul>
+
+<h2 id="pagerankpoer-iteration">PageRank::Poer Iteration</h2>
+<ul>
+  <li>
+    <script type="math/tex; mode=display">r^{t+1}=M.r^{t}</script>
+  </li>
+</ul>
+
 
   
     <footer>
