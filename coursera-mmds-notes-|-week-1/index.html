@@ -339,17 +339,45 @@ get <script type="math/tex">\frac{r_j}{n}</script> votes</li>
   <li>Clearly, r is  a principle eign vector of M</li>
 </ul>
 
-<h2 id="pagerankpoer-iteration">PageRank::Poer Iteration</h2>
+<h2 id="pagerankpower-iteration">PageRank::Power Iteration</h2>
 <ul>
   <li>
     <script type="math/tex; mode=display">r^{t+1}=M.r^{t}</script>
   </li>
 </ul>
 
-<h2 id="random-walk">Random walk</h2>
+<h2 id="random-walk-interpretation">Random walk interpretation</h2>
 <ul>
-  <li>Surfer at time t on page i, then on t+1 at some j</li>
-  <li></li>
+  <li>Surfer at time t on page i, then on t+1 at some j, an outlink of i</li>
+  <li>Repeat</li>
+  <li><script type="math/tex">p(t)</script> = vector with probability that walker is at ith coordinate at time t</li>
+  <li>
+    <script type="math/tex; mode=display">p(t+1)=M.p(t)</script>
+  </li>
+  <li>Iterate till statinary condition <script type="math/tex">p(t+1)=M.p(t)=p(t)</script></li>
+</ul>
+
+<h2 id="conditions-on-m">Conditions on M</h2>
+<ul>
+  <li>Two main problems: Spider trap <script type="math/tex">A \longleftrightarrow B</script></li>
+  <li>And Dead end $$A \longrightarrow Bi$</li>
+  <li>Randowm walker stuck at m: <script type="math/tex"> A \longleftrightarrow B \longrightarrow m \longleftarrow </script></li>
+</ul>
+
+<h2 id="spider-trap-solution">Spider Trap Solution</h2>
+<ul>
+  <li>Jumping to i+1 is probabilistic with probability with choosing a random jump link= <script type="math/tex">\beta</script></li>
+</ul>
+
+<h2 id="teleporting">Teleporting</h2>
+<ul>
+  <li>Keep <script type="math/tex">M</script> stocahstic, aperiodic, irreducible</li>
+  <li><script type="math/tex">A=M+a^{T}(\frac{1}{n}e)</script> a=1 if node i has out degree 0, else 0, e=unit vector</li>
+  <li>
+    <script type="math/tex; mode=display">r_j = \sum_{i\longrightarrow j} \beta \frac{r_i}{d_i} + (1-\beta)\frac{1}{n}</script>
+  </li>
+  <li><script type="math/tex">A=\beta M+(1-\beta)\frac{1}{n}e.e^T</script>, <script type="math/tex">r^{t+1}=Ar^t</script></li>
+  <li>Efficiently <script type="math/tex">r_i = \sum A_{ij}. r_j</script> where <script type="math/tex">A_{ij}=\beta M_{ij}+ \frac{1-\beta}{N}</script> <script type="math/tex">\sum r_j=1</script>.</li>
 </ul>
 
 
