@@ -9,10 +9,8 @@
   <meta name="author" content="Saket Choudhary">
 
   
-  <meta name="description" content="I came across this small little hack while writing my downloader for NCBI-SRA datasets(Should be on PyPI soon!) 1
-2
-import signal
-signal.signal( &hellip;">
+  <meta name="description" content="GRCh37 is supposedly the NCBI equivalent of UCSC’s hg19. However the forum posts on are not really convincing.
+There are more insights here &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -92,104 +90,6 @@ MathJax.Hub.Config({
     <div id="content">
       <div class="blog-index">
   
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/11/19/python-silence-traceback-on-ctrl-plus-c/">Python Silence Traceback on Ctrl+c</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-11-19T00:44:50-08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2014/11/19/python-silence-traceback-on-ctrl-plus-c/#disqus_thread"
-             data-disqus-identifier="http://saketkc.github.io/blog/2014/11/19/python-silence-traceback-on-ctrl-plus-c/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I came across this small little hack while 
-writing my downloader for NCBI-SRA datasets(Should be on PyPI soon!)</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-</pre></td><td class="code"><pre><code class="python"><span class="line"><span class="kn">import</span> <span class="nn">signal</span>
-</span><span class="line"><span class="n">signal</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="n">signal</span><span class="o">.</span><span class="n">SIGINT</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">:</span> <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<h3 id="what-did-we-just-do">What did we just do?</h3>
-<p>using <code>signal.signal()</code> I set the <code>handler</code> to <code>sys.exit(0)</code> for <code>signal.SIGINT</code>
-which is translated to a <code>KeyBoardInterrupt</code> exception(invoked on a <code>Ctrl+C</code> press)</p>
-
-<p>Read more about the <code>signal</code> module <a href="https://docs.python.org/2/library/signal.html">here</a>.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/11/14/markdown-test/">$$LaTeX Markdown Test</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-11-14T19:26:50-08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2014/11/14/markdown-test/#disqus_thread"
-             data-disqus-identifier="http://saketkc.github.io/blog/2014/11/14/markdown-test/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><script type="math/tex; mode=display">% <![CDATA[
-
-f(x) = 
-\begin{cases}
-\frac{1}{b-a} & if\  a\leq x \leq b\\
-0 & otherwise
-\end{cases}
- %]]></script>
-</div>
-  
-  
-
-
-    </article>
   
   
     <article>
