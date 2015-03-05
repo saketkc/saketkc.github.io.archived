@@ -14,10 +14,23 @@ class SuffixTrie(object):
                     root[character] = {}
                 root = root[character]
 
-    def printt(self):
+    def printTrie(self):
         print str(self.root)
 
-x=SuffixTrie('ABABBC')
+    def searchString(self, s):
+        root = self.root
+        for character in s:
+            if character not in root.keys():
+                return False
+            root = root[character]
+        return root
+
+    def perform_edge_compression(self):
+        pass
+
+    def get_offset(self,T,substring):
+        pass
+
+x = SuffixTrie('ABABBC')
 graph = networkx.from_dict_of_dicts(x.root)
-print networkx.draw_graphviz(graph)
-#x.printt()
+print x.searchString('BB')
