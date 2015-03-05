@@ -48,3 +48,40 @@ footer: true
 Think!
 Minhash 1 2 2 3
 
+- Property: h(C1)=h(C2) = Sim(C1,C2) probability wise = a/a+b+c
+- Proof for above is trivial(based on the type of rows we assigned)
+- Similairty of signaures = fraction of minhash functions in which they agree
+
+## Problems with minhashing:
+- Hard to pick random permutation of 1 billion+ rows
+- Representing permutations rquires 1 billoion extra rows
+
+## Aliter Implementation of minhashing
+- Pick 100 hash functions
+- M(i,C) = Slot for ith hash function for Cth column
+- M(i,C) =min($$h_i(r)$$) for whcih column C has 1 in row r
+- $$h_i$$ is not necessarily a permutation. h_i can maps two or more rows
+to same values. But if we increase the number of buckets M
+theye probability of collision can be ignored
+- TODO: Example?
+
+
+## Locality Sensitive Hashing
+- Select small list of candidate pairs for evaluating similiarity
+- Hash columns to many buckets. Elements of same buckets for pair
+- Pick similiarty threshold t <1. We want the columns c1 and c2 of signature matrix
+M to be a candiate pair iff their singatures agree in atleast fraction t of the rows
+- Divide Matrix M into b bands of $$k$$ rows
+- For each band, hash its portion of each column to  a hash table with k buckets making k large
+- Candidate pairs: One those hash to the  same bucketi
+- ToDO: Example for comparing probabilites of false positives
+
+## Entity Resolution
+- Entity resolution: Examine set of records to determine if they belong to
+same “entity” and merge
+
+## Fingerprint Comparison
+- Represent fingerprint by set of positions of minutiae
+- Minutiae: Features of fingerprint such as points where ridges meet
+- Place a grid on fingerprint space, normalize 
+- Set of grid squares where minituae are located represents the fingerprint
