@@ -9,7 +9,8 @@
   <meta name="author" content="Saket Choudhary">
 
   
-  <meta name="description" content=" Pattern Discovery Tweet Comments Please enable JavaScript to view the comments powered by Disqus. ">
+  <meta name="description" content="Pattern Discovery Pattern: Set of items/subsequences that occur frequently in a dataset.
+Intrinsic property of the dataset Absoulte Support: &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -107,7 +108,29 @@ MathJax.Hub.Config({
 <time datetime="2015-03-15T19:21:00-07:00" pubdate data-updated="true"></time></p>
   </header>
   
-  
+  <p>Pattern: Set of items/subsequences that occur frequently in a dataset.
+Intrinsic property of the dataset</p>
+
+<ul>
+  <li>Absoulte Support: Frequency of X in dataset</li>
+  <li>Relative Support: Absolute Support/ Total # of records</li>
+</ul>
+
+<h2 id="itemsets-to-association-rules">Itemsets to association rules</h2>
+<ul>
+  <li>Association Rule: $X \Longrightarrow Y(S, c)$</li>
+  <li>Support(s): Probability that a transaction contains $X \cup Y$</li>
+  <li>Confidence(c): The conditional probability that a transaction containing X also contains Y: $c = \frac{Sup(X \cup Y)}{sup(X)}</li>
+  <li>Association rule mining: Find all the rules $X \Longrightarrow Y$ with minimum support and confidence</li>
+</ul>
+
+<h2 id="closed-patterns">Closed Patterns</h2>
+<ul>
+  <li>Too many frequent patterns(all possible subsets): $2^n-11$</li>
+  <li>Closed Patterns: X is closed if X is frequent(it satisfies the minsup threshold) and there exists
+no supper pattern $X \subset Y$ with same support as X</li>
+</ul>
+
 
   
     <footer>
