@@ -23,6 +23,6 @@ own proposals so I tried keeping the format very generic. I sent out couple
 of emails to past GSoC participants asking them if they would like to push theirs too.
 
 I hope this grows into one powerful archive:
-https://github.com/saketkc/fos-proposals
+[https://github.com/saketkc/fos-proposals](https://github.com/saketkc/fos-proposals)
 
 
