@@ -1,0 +1,394 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Primer to LSH - Science?!</title>
+  <meta name="author" content="Saket Choudhary">
+  <meta name="google-site-verification" content="a56hrMS1KM6u5S1BBjobvquWlsQHJ7lUruPBF6B1rJM" />
+  
+  <meta name="description" content="Primer to LSH The statistic is characterized by number of matches of length k between any two sequences and allowing upto mis
+matches. Sequences A &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://saketkc.github.io/primer-to-lsh">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Science?!" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href='https://fonts.googleapis.com/css?family=Noto+Serif:400,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-55540107-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  jax: ["input/TeX", "output/HTML-CSS"],
+  tex2jax: {
+    inlineMath: [ ['$', '$'] ],
+    displayMath: [ ['$$', '$$']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  messageStyle: "none",
+  "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+});
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+
+<body    class="collapse-sidebar sidebar-footer" >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Science?!</a></h1>
+  
+    <h2>{Saket Choudhary}</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  
+  
+</ul>
+
+<ul class="main-navigation">
+  <li><a href="/about">About</a></li>
+  <li><a href="/pertinent-blog">Math Blog</a></li>
+  <li><a href="/resume" target="_blank">CV</a></li>
+  <li><a href="/talks" target="_blank">Talks</a></li>
+  <li><a href="/publications" target="_blank">Publications</a></li>
+  <li><a href="https://twitter.com/saketkc" target="_blank">Twitter</a></li>
+  <li><a href="https://github.com/saketkc" target="_blank">Github</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article role="article">
+  
+  <header>
+    <h1 class="entry-title">Primer to LSH</h1>
+    <p class="meta">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-01-02T19:31:00-08:00" pubdate data-updated="true"></time></p>
+  </header>
+  
+  <h2 id="d2"><script type="math/tex">D_2</script></h2>
+<p>The <script type="math/tex">D_2</script> statistic is characterized by number of matches of length k between any two sequences <script type="math/tex">A</script> and <script type="math/tex">B</script> allowing upto <script type="math/tex">t</script> mis
+matches. Sequences A and B are represented as <script type="math/tex">(A_1, A_2, A_3, ... A_n_A) and (B_1, B_2, B_3, ...., B_n_B)</script> respectively.</p>
+
+<p>More generally <script type="math/tex">D_2</script> is characterized by <script type="math/tex">(n_A, n_B, k, t, \eta)</script> where:
+<script type="math/tex">n_A</script> = Total length of nucleotides in sequence A
+<script type="math/tex">n_B</script> = Total length of nucleotides in sequence B
+k = length of matches
+t = length of allowable mismatches</p>
+
+<h2 id="jaccard-similarity">Jaccard Similarity</h2>
+
+<p>Jaccard similarity: Notion of similarity that associates similarity of sets with the relative size of their intersection
+A comman example would be determining if a document is a plagiarised copy of another, if not identical. The technique 
+used to convert these documents to a set intersection problem is referred to as “shingling”</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Jaccard similarity = $$ jSIM(S,T) = \frac{</td>
+      <td>S \cap T</td>
+      <td>}{</td>
+      <td>S \cup T</td>
+      <td>} $$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Let <script type="math/tex">S=[1,2,3]</script> and <script type="math/tex">T=[2,3,4,5,6]</script> then <script type="math/tex">SIM(S,T)=\frac{2}{6}</script></p>
+
+<h4 id="jaccard-distance">Jaccard distance</h4>
+
+<p><script type="math/tex">D_J(A,B) = 1 - jSIM(A,B)</script> and is a distance metric.</p>
+
+<h2 id="cosine-similarity">Cosine Similarity</h2>
+
+<p>As the name suggests, cosine similarity relies on taking cosines between two given vectors to infer the similarity.
+The range for cosine is [-1,1] When used in positive space it is [0,1]</p>
+
+<p>Thinking in terms of document matching, a document can be represented as a vector of words, where the “words” form the unit vectorsand the 
+associated scalar is the frequency of the word.</p>
+
+<h3 id="cosine-distance">Cosine distance</h3>
+
+<p><script type="math/tex">D_C(A,B)=1-S_C(A,B)</script> but is not a metric since it does not follow the triangular inequality <script type="math/tex">d(x,z) \leq d(x,y)+d(y,z)</script>, neither does it
+follow the coincidence axiom <script type="math/tex">d(x,y)=0 iff\ x=y</script> since cosine(x,y)=0 if <script type="math/tex">x \perp y</script></p>
+
+<script type="math/tex; mode=display">cSIM(A,B) = cos(\theta) =  \frac{A.B}{|A||B|}</script>
+
+<p><script type="math/tex">Range(cSIM(A,B))=[-1,1]</script> where -1 means entirely opposite, 1 means ‘exactly similar’. In a positive space, such as when using the frequencies of
+words, the range is limited to <script type="math/tex">[0,1]</script></p>
+
+<h2 id="angular-similarity">Angular similarity</h2>
+<p>For vectors in positive+negative space: </p>
+
+<script type="math/tex; mode=display">aSIM(A,B)=1-\frac{cos^{-1}(cSIM(A,B))}{\pi}</script>
+
+<p>For vectors in positive space(only): </p>
+
+<script type="math/tex; mode=display">aSIM(A,B)=1-\frac{2.cos^{-1}(cSIM(A,B))}{\pi}</script>
+
+<h3 id="angular-difference-coefficient">Angular difference coefficient</h3>
+<p><script type="math/tex">D_A(A,B) = 1-aSIM(A,B)</script> and <em>is</em> a distance metric</p>
+
+<h2 id="tanimoto-similarity">Tanimoto similarity</h2>
+
+<p><a href="http://www.sciencemag.org/content/132/3434/1115">A computer program for Classifying plants</a> describes Tanimoto similarity using bit arrays
+where each bit is a representative of the presence(1) or absence(0) of the plant. </p>
+
+<script type="math/tex; mode=display">tSIM(A,B)=\frac{\sum_i(A_i \land B_i)}{\sum_i(A_i \lor B_i)}</script>
+
+<p>Thus tanimato similarity is simply defined as the ratio of total number of common bits set to 1 to the total number of bits set to 1 in either(or both) of the vectors.</p>
+
+<h2 id="tanimato-similarity-vs-jacard-similarity">Tanimato similarity v/s Jacard similarity</h2>
+
+<p>A = [“mary”, “little”, “girl”]
+B = [“mary”, “had”, “a”, “little”, “lamb”, “which”, “bleat”]</p>
+
+<script type="math/tex; mode=display">jSIM(A,B) = \frac{2}{8}</script>
+
+<p>Now just similar to the plants context for Tanimato similarity, our plants are: [“mary”, “had”, “a”, “little”, “lamb”, “which”, “bleat”, “girl”]
+and thus, the corresponding bit vectors are:
+A = [1,0,0,1,0,0,0,1]
+B = [1,1,1,1,1,1,1,0]</p>
+
+<script type="math/tex; mode=display">tSIM(A,B) = \frac{1+0+0+1+0+0+0+0}{1+1+1+1+1+1+1+1} = \frac{2}{8}</script>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Also note, $$</td>
+      <td>A</td>
+      <td>= 3<script type="math/tex">, </script></td>
+      <td>B</td>
+      <td>= 7<script type="math/tex">, and </script></td>
+      <td>A\cap B</td>
+      <td>= 2 $$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>So <script type="math/tex">jSIM, tSIM</script> are in fact <em>one and the same</em></p>
+
+<p>In fact if jacard similarity were to be written for bit arrays:</p>
+
+<script type="math/tex; mode=display">jSIM(A,B) = \frac{|A \cap B|}{A \cup B|} = \frac{A .B}{|A| + |B| - |A \cap B|}</script>
+
+<p>where <script type="math/tex">A.B = \sum_i(A_iB_i) = A \cup B</script>
+denominator is trivial.</p>
+
+<p>More generally, tanimato or jacard simialruty is given by:</p>
+
+<script type="math/tex; mode=display">SIM(A,B) = \frac{A.B}{||A||^2 + ||B||^2 - A.B}</script>
+
+<h3 id="tanimato-distance">Tanimato distance</h3>
+
+<script type="math/tex; mode=display">D_T(A,B)=-log_2(T(A,B))</script>
+
+<p>To quote wikipedia <a href="http://en.wikipedia.org/wiki/Jaccard_index#Tanimoto_similarity_and_distance">Wikipedia</a></p>
+<blockquote><p>This coefficient is, deliberately, not a distance metric. It is chosen to allow the possibility of two specimens, which are quite different from each other, to both be similar to a third. It is easy to construct an example which disproves the property of triangle inequality.</p></blockquote>
+
+<p><em>Wrong</em> definition:</p>
+
+<p>Tanimato distance is often confused with Jacard distance and maybe wrongly defined as <script type="math/tex">D_T(A,B)=1-tSIM(A,B)</script>, thus leading to the wrong conclusion that tanimato 
+distance is indeed a distance metric, when it is not.</p>
+
+<script type="math/tex; mode=display">D_J(A,B) = 1-\frac{|A \cap B|}{|A \cup B|} = \frac{|A \cup B| - |A \cap B|}{A \cup B|} = \frac{|A| + |B| - 2|A \cap B|}{|A| + |B| - |A \cap B|}</script>
+
+<h2 id="a-warmup-problem">A warmup problem</h2>
+<p>Taken from <a href="http://infolab.stanford.edu/~ullman/mmds/booka.pdf">Chapter 3 of Ullman’s Mining Massive Datasets</a></p>
+<blockquote><p>Suppose we have a universal set U of n elements, and we<br />choose two subsets S and T at random, each with m of the n elements. What<br />is the expected value of the Jaccard similarity of S and T</p></blockquote>
+
+<h3 id="solution">Solution:</h3>
+
+<script type="math/tex; mode=display">P(S \cap T = k) = \frac{ {m \choose k} * {(n-m) \choose (m-k)} }{ {n \choose m} * {n \choose m} }</script>
+
+<script type="math/tex; mode=display"> jSIM_k(S,T) = \frac{k}{m + (m-k)} </script>
+
+<p>Thus <script type="math/tex"> E(jSIM(S,T)) = \sum_k jSIM_k * P(S\cap T = k) = \sum_{k=1}^{m} \frac{k}{2m-k} *  \frac{ {m \choose k} * {(n-m) \choose (m-k)} }{ {n \choose m} * {n \choose m} }</script></p>
+
+<h3 id="todo-lsh">ToDO: LSH</h3>
+
+  
+    <footer>
+      <p class="meta">
+        
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-01-02T19:31:00-08:00" pubdate data-updated="true"></time>
+        
+      </p>
+      
+        <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://saketkc.github.io/primer-to-lsh/index.html" data-via="saketkc" data-counturl="http://saketkc.github.io/primer-to-lsh/index.html" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+      
+    </footer>
+  
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+  <aside class="sidebar">
+   
+  
+    
+  
+</aside>
+
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Saket Choudhary -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'teksophere';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://saketkc.github.io/primer-to-lsh/index.html';
+        var disqus_url = 'http://saketkc.github.io/primer-to-lsh/index.html';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+<script>
+  $(document).ready(function() {  
+  var stickyNavTop = $('nav').offset().top;  
+    
+  var stickyNav = function(){  
+  var scrollTop = $(window).scrollTop();  
+         
+  if (scrollTop > stickyNavTop) {   
+      $('nav').addClass('sticky');  
+  } else {  
+      $('nav').removeClass('sticky');   
+  }  
+  };  
+    
+  stickyNav();  
+    
+  $(window).scroll(function() {  
+      stickyNav();  
+  });  
+  });  
+</script>
+
+
+</body>
+</html>
