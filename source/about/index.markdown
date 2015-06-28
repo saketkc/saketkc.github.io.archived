@@ -9,6 +9,8 @@ footer: true
 I am a first year PhD student studying Computational Biology and
 Bioinformatics at [University of Southern California](http://www.usc.edu).
 
+I am more active on my Math Blog, [Piddling-Pertinent](http://saket-choudhary.me/pertinent-blog)
+
 I spent the most wonderful years of my life(ever!) at [Indian Institute of Technology Bombay](http://www.iitb.ac.in)
 graduating with a Bachelors and Masters degree in Chemical Engineering.
 
