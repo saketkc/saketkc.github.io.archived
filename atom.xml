@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Science?!]]></title>
-  <link href="http://saket-choudhary.me/atom.xml" rel="self"/>
-  <link href="http://saket-choudhary.me/"/>
-  <updated>2015-06-28T03:50:09-07:00</updated>
-  <id>http://saket-choudhary.me/</id>
+  <link href="http://saketkc.github.io/atom.xml" rel="self"/>
+  <link href="http://saketkc.github.io/"/>
+  <updated>2015-06-28T02:35:03-07:00</updated>
+  <id>http://saketkc.github.io/</id>
   <author>
     <name><![CDATA[Saket Choudhary]]></name>
     <email><![CDATA[saketkc@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Fos-proposals]]></title>
-    <link href="http://saket-choudhary.me/blog/2015/03/29/fos-proposals/"/>
+    <link href="http://saketkc.github.io/blog/2015/03/29/fos-proposals/"/>
     <updated>2015-03-29T01:46:50-07:00</updated>
-    <id>http://saket-choudhary.me/blog/2015/03/29/fos-proposals</id>
+    <id>http://saketkc.github.io/blog/2015/03/29/fos-proposals</id>
     <content type="html"><![CDATA[<p><a href="https://www.google-melange.com/gsoc/homepage/google/gsoc2015">GSoC 2015</a> application
 period just got over couple of days ago. I received at least 3 requests asking
 me for my previous proposals. This made me realise, that even though
@@ -42,9 +42,9 @@ of emails to past GSoC participants asking them if they would like to push their
   
   <entry>
     <title type="html"><![CDATA[GRCh37 v/s Hg19]]></title>
-    <link href="http://saket-choudhary.me/blog/2014/10/14/grch37-v-slash-s-hg19/"/>
+    <link href="http://saketkc.github.io/blog/2014/10/14/grch37-v-slash-s-hg19/"/>
     <updated>2014-10-14T00:06:21-07:00</updated>
-    <id>http://saket-choudhary.me/blog/2014/10/14/grch37-v-slash-s-hg19</id>
+    <id>http://saketkc.github.io/blog/2014/10/14/grch37-v-slash-s-hg19</id>
     <content type="html"><![CDATA[<p>GRCh37 is <a href="http://seqanswers.com/forums/archive/index.php/t-9757.html">supposedly</a> the NCBI equivalent of UCSC’s hg19.</p>
 
 <p>However the forum posts on are not really convincing.
@@ -252,9 +252,9 @@ pickle.dump(pickle_string, open('comparison_pickled.p', 'wb'))
   
   <entry>
     <title type="html"><![CDATA[Library Size, Fragment Size, Insert Size]]></title>
-    <link href="http://saket-choudhary.me/blog/2014/10/12/library-size/"/>
+    <link href="http://saketkc.github.io/blog/2014/10/12/library-size/"/>
     <updated>2014-10-12T13:51:01-07:00</updated>
-    <id>http://saket-choudhary.me/blog/2014/10/12/library-size</id>
+    <id>http://saketkc.github.io/blog/2014/10/12/library-size</id>
     <content type="html"><![CDATA[<p>Bioinformatics has always been plagued with terms with multi-definitions for the same term. The FastQ format for example remained undocumented until Peter Cock et al. published <a href="http://nar.oxfordjournals.org/content/38/6/1767.long">The Sanger FASTQ file format for sequences with quality scores, and the Solexa/Illumina FASTQ variants</a> </p>
 
 <p>I will try to cover a detailed explanation of the following terms , which I have often found to be confusing, thanks to the lack of cohesiveness in Bioinformatics:</p>
