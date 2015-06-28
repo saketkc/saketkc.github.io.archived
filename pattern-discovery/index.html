@@ -5,12 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>$$LaTeX Markdown Test - Science?!</title>
+  <title>Pattern Discovery - Science?!</title>
   <meta name="author" content="Saket Choudhary">
-
+  <meta name="google-site-verification" content="a56hrMS1KM6u5S1BBjobvquWlsQHJ7lUruPBF6B1rJM" />
   
-  <meta name="description" content="
-">
+  <meta name="description" content="Pattern Discovery Pattern: Set of items/subsequences that occur frequently in a dataset.
+Intrinsic property of the dataset Absoulte Support: &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://saketkc.github.io/blog/2014/11/14/markdown-test">
+  <link rel="canonical" href="http://saketkc.github.io/pattern-discovery">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Science?!" type="application/atom+xml">
@@ -78,8 +78,10 @@ MathJax.Hub.Config({
 
 <ul class="main-navigation">
   <li><a href="/about">About</a></li>
+  <li><a href="/pertinent-blog">Math Blog</a></li>
   <li><a href="/resume" target="_blank">CV</a></li>
   <li><a href="/talks" target="_blank">Talks</a></li>
+  <li><a href="/publications" target="_blank">Publications</a></li>
   <li><a href="https://twitter.com/saketkc" target="_blank">Twitter</a></li>
   <li><a href="https://github.com/saketkc" target="_blank">Github</a></li>
   <li><a href="/blog/archives">Archives</a></li>
@@ -89,15 +91,54 @@ MathJax.Hub.Config({
   <div id="main">
     <div id="content">
       <div>
-<article class="hentry" role="article">
+<article role="article">
   
   <header>
-    
-      <h1 class="entry-title">$$LaTeX Markdown Test</h1>
-    
-    
+    <h1 class="entry-title">Pattern Discovery</h1>
+    <p class="meta">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-03-15T19:21:00-07:00" pubdate data-updated="true"></time></p>
+  </header>
+  
+  <p>Pattern: Set of items/subsequences that occur frequently in a dataset.
+Intrinsic property of the dataset</p>
+
+<ul>
+  <li>Absoulte Support: Frequency of X in dataset</li>
+  <li>Relative Support: Absolute Support/ Total # of records</li>
+</ul>
+
+<h2 id="itemsets-to-association-rules">Itemsets to association rules</h2>
+<ul>
+  <li>Association Rule: $X \Longrightarrow Y(S, c)$</li>
+  <li>Support(s): Probability that a transaction contains $X \cup Y$</li>
+  <li>Confidence(c): The conditional probability that a transaction containing X also contains Y: $c = \frac{Sup(X \cup Y)}{sup(X)}</li>
+  <li>Association rule mining: Find all the rules $X \Longrightarrow Y$ with minimum support and confidence</li>
+</ul>
+
+<h2 id="closed-patterns">Closed Patterns</h2>
+<ul>
+  <li>Too many frequent patterns(all possible subsets): $2^n-11$</li>
+  <li>Closed Patterns: X is closed if X is frequent(it satisfies the minsup threshold) and there exists
+no supper pattern $X \subset Y$ with same support as X</li>
+</ul>
+
+
+  
+    <footer>
       <p class="meta">
         
+        
 
 
 
@@ -109,61 +150,13 @@ MathJax.Hub.Config({
   
 
 
-<time datetime="2014-11-14T19:26:50-08:00" pubdate data-updated="true"></time>
-        
-           | <a href="#disqus_thread"
-             data-disqus-identifier="http://saketkc.github.io">Comments</a>
+<time datetime="2015-03-15T19:21:00-07:00" pubdate data-updated="true"></time>
         
       </p>
-    
-  </header>
-
-
-<div class="entry-content"><script type="math/tex; mode=display">% <![CDATA[
-
-f(x) = 
-\begin{cases}
-\frac{1}{b-a} & if\  a\leq x \leq b\\
-0 & otherwise
-\end{cases}
- %]]></script>
-</div>
-
-
-  <footer>
-    <p class="meta">
       
+        <div class="sharing">
   
-
-<span class="byline author vcard">Posted by <span class="fn">Saket Choudhary</span></span>
-
-      
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-11-14T19:26:50-08:00" pubdate data-updated="true"></time>
-      
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/mathematics/'>mathematics</a>
-  
-</span>
-
-
-    </p>
-    
-      <div class="sharing">
-  
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://saketkc.github.io/blog/2014/11/14/markdown-test/" data-via="saketkc" data-counturl="http://saketkc.github.io/blog/2014/11/14/markdown-test/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://saketkc.github.io/pattern-discovery/index.html" data-via="saketkc" data-counturl="http://saketkc.github.io/pattern-discovery/index.html" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -173,16 +166,9 @@ f(x) =
   
 </div>
 
-    
-    <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/10/14/grch37-v-slash-s-hg19/" title="Previous Post: GRCh37 v/s hg19">&laquo; GRCh37 v/s hg19</a>
-      
-      
-        <a class="basic-alignment right" href="/blog/2014/11/19/python-silence-traceback-on-ctrl-plus-c/" title="Next Post: Python silence traceback on Ctrl+c">Python silence traceback on Ctrl+c &raquo;</a>
-      
-    </p>
-  </footer>
+    </footer>
+  
 </article>
 
   <section>
@@ -217,8 +203,8 @@ f(x) =
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://saketkc.github.io/blog/2014/11/14/markdown-test/';
-        var disqus_url = 'http://saketkc.github.io/blog/2014/11/14/markdown-test/';
+        var disqus_identifier = 'http://saketkc.github.io/pattern-discovery/index.html';
+        var disqus_url = 'http://saketkc.github.io/pattern-discovery/index.html';
         var disqus_script = 'embed.js';
       
     (function () {

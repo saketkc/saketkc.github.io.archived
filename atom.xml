@@ -4,7 +4,7 @@
   <title><![CDATA[Science?!]]></title>
   <link href="http://saketkc.github.io/atom.xml" rel="self"/>
   <link href="http://saketkc.github.io/"/>
-  <updated>2015-02-20T12:32:08-08:00</updated>
+  <updated>2015-06-28T02:35:03-07:00</updated>
   <id>http://saketkc.github.io/</id>
   <author>
     <name><![CDATA[Saket Choudhary]]></name>
@@ -14,40 +14,29 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Python Silence Traceback on Ctrl+c]]></title>
-    <link href="http://saketkc.github.io/blog/2014/11/19/python-silence-traceback-on-ctrl-plus-c/"/>
-    <updated>2014-11-19T00:44:50-08:00</updated>
-    <id>http://saketkc.github.io/blog/2014/11/19/python-silence-traceback-on-ctrl-plus-c</id>
-    <content type="html"><![CDATA[<p>I came across this small little hack while 
-writing my downloader for NCBI-SRA datasets(Should be on PyPI soon!)</p>
+    <title type="html"><![CDATA[Fos-proposals]]></title>
+    <link href="http://saketkc.github.io/blog/2015/03/29/fos-proposals/"/>
+    <updated>2015-03-29T01:46:50-07:00</updated>
+    <id>http://saketkc.github.io/blog/2015/03/29/fos-proposals</id>
+    <content type="html"><![CDATA[<p><a href="https://www.google-melange.com/gsoc/homepage/google/gsoc2015">GSoC 2015</a> application
+period just got over couple of days ago. I received at least 3 requests asking
+me for my previous proposals. This made me realise, that even though
+they were always publicly available on Google-melange, the way melange works
+makes such public proposals almost un-discoverable and probably un-indexable
+too.</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-</pre></td><td class="code"><pre><code class="python"><span class="line"><span class="kn">import</span> <span class="nn">signal</span>
-</span><span class="line"><span class="n">signal</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="n">signal</span><span class="o">.</span><span class="n">SIGINT</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">:</span> <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p>Most of my proposals were written using Google Docs, since it makes life
+easy for the mentors to track changes and comment. But they are still un-discoverable
+in this form.</p>
 
-<h3 id="what-did-we-just-do">What did we just do?</h3>
-<p>using <code>signal.signal()</code> I set the <code>handler</code> to <code>sys.exit(0)</code> for <code>signal.SIGINT</code>
-which is translated to a <code>KeyBoardInterrupt</code> exception(invoked on a <code>Ctrl+C</code> press)</p>
+<p>I decided to create a repository porting all my previous proposals to markdown.
+<code>pandoc</code> has turned out to be really powerful. I didn’t want to just host my 
+own proposals so I tried keeping the format very generic. I sent out couple
+of emails to past GSoC participants asking them if they would like to push theirs too.</p>
 
-<p>Read more about the <code>signal</code> module <a href="https://docs.python.org/2/library/signal.html">here</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[$$LaTeX Markdown Test]]></title>
-    <link href="http://saketkc.github.io/blog/2014/11/14/markdown-test/"/>
-    <updated>2014-11-14T19:26:50-08:00</updated>
-    <id>http://saketkc.github.io/blog/2014/11/14/markdown-test</id>
-    <content type="html"><![CDATA[<script type="math/tex; mode=display">% &lt;![CDATA[
+<p>I hope this grows into one powerful archive:
+<a href="https://github.com/saketkc/fos-proposals">https://github.com/saketkc/fos-proposals</a></p>
 
-f(x) = 
-\begin{cases}
-\frac{1}{b-a} & if\  a\leq x \leq b\\
-0 & otherwise
-\end{cases}
- %]]&gt;</script>
 ]]></content>
   </entry>
   
