@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Open | Science?!]]></title>
+  <link href="http://saket-choudhary.me/blog/categories/open/atom.xml" rel="self"/>
+  <link href="http://saket-choudhary.me/"/>
+  <updated>2015-06-28T03:50:09-07:00</updated>
+  <id>http://saket-choudhary.me/</id>
+  <author>
+    <name><![CDATA[Saket Choudhary]]></name>
+    <email><![CDATA[saketkc@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Fos-proposals]]></title>
+    <link href="http://saket-choudhary.me/blog/2015/03/29/fos-proposals/"/>
+    <updated>2015-03-29T01:46:50-07:00</updated>
+    <id>http://saket-choudhary.me/blog/2015/03/29/fos-proposals</id>
+    <content type="html"><![CDATA[<p><a href="https://www.google-melange.com/gsoc/homepage/google/gsoc2015">GSoC 2015</a> application
+period just got over couple of days ago. I received at least 3 requests asking
+me for my previous proposals. This made me realise, that even though
+they were always publicly available on Google-melange, the way melange works
+makes such public proposals almost un-discoverable and probably un-indexable
+too.</p>
+
+<p>Most of my proposals were written using Google Docs, since it makes life
+easy for the mentors to track changes and comment. But they are still un-discoverable
+in this form.</p>
+
+<p>I decided to create a repository porting all my previous proposals to markdown.
+<code>pandoc</code> has turned out to be really powerful. I didn’t want to just host my 
+own proposals so I tried keeping the format very generic. I sent out couple
+of emails to past GSoC participants asking them if they would like to push theirs too.</p>
+
+<p>I hope this grows into one powerful archive:
+<a href="https://github.com/saketkc/fos-proposals">https://github.com/saketkc/fos-proposals</a></p>
+
+]]></content>
+  </entry>
+  
+</feed>

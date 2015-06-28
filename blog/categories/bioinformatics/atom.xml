@@ -1,188 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>Science?!</title>
-  <meta name="author" content="Saket Choudhary">
-  <meta name="google-site-verification" content="a56hrMS1KM6u5S1BBjobvquWlsQHJ7lUruPBF6B1rJM" />
-  
-  <meta name="description" content="GSoC 2015 application
-period just got over couple of days ago. I received at least 3 requests asking
-me for my previous proposals. This made me &hellip;">
-  
-
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><![CDATA[Category: Bioinformatics, | Science?!]]></title>
+  <link href="http://saket-choudhary.me/blog/categories/bioinformatics/atom.xml" rel="self"/>
+  <link href="http://saket-choudhary.me/"/>
+  <updated>2015-06-28T03:50:09-07:00</updated>
+  <id>http://saket-choudhary.me/</id>
+  <author>
+    <name><![CDATA[Saket Choudhary]]></name>
+    <email><![CDATA[saketkc@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
 
   
-  <link rel="canonical" href="http://saket-choudhary.me">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="Science?!" type="application/atom+xml">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href='https://fonts.googleapis.com/css?family=Noto+Serif:400,700' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-
-  
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-55540107-1']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
-
-
-</head>
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  jax: ["input/TeX", "output/HTML-CSS"],
-  tex2jax: {
-    inlineMath: [ ['$', '$'] ],
-    displayMath: [ ['$$', '$$']],
-    processEscapes: true,
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-  },
-  messageStyle: "none",
-  "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
-});
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
-
-<body    class="collapse-sidebar sidebar-footer" >
-  <header role="banner"><hgroup>
-  <h1><a href="/">Science?!</a></h1>
-  
-    <h2>{Saket Choudhary}</h2>
-  
-</hgroup>
-
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  
-  
-</ul>
-
-<ul class="main-navigation">
-  <li><a href="/about">About</a></li>
-  <li><a href="/pertinent-blog">Math Blog</a></li>
-  <li><a href="/resume" target="_blank">CV</a></li>
-  <li><a href="/talks" target="_blank">Talks</a></li>
-  <li><a href="/publications" target="_blank">Publications</a></li>
-  <li><a href="https://twitter.com/saketkc" target="_blank">Twitter</a></li>
-  <li><a href="https://github.com/saketkc" target="_blank">Github</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-</ul>
-
-</nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2015/03/29/fos-proposals/">Fos-proposals</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2015-03-29T01:46:50-07:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2015/03/29/fos-proposals/#disqus_thread"
-             data-disqus-identifier="http://saket-choudhary.me/blog/2015/03/29/fos-proposals/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="https://www.google-melange.com/gsoc/homepage/google/gsoc2015">GSoC 2015</a> application
-period just got over couple of days ago. I received at least 3 requests asking
-me for my previous proposals. This made me realise, that even though
-they were always publicly available on Google-melange, the way melange works
-makes such public proposals almost un-discoverable and probably un-indexable
-too.</p>
-
-<p>Most of my proposals were written using Google Docs, since it makes life
-easy for the mentors to track changes and comment. But they are still un-discoverable
-in this form.</p>
-
-<p>I decided to create a repository porting all my previous proposals to markdown.
-<code>pandoc</code> has turned out to be really powerful. I didn’t want to just host my 
-own proposals so I tried keeping the format very generic. I sent out couple
-of emails to past GSoC participants asking them if they would like to push theirs too.</p>
-
-<p>I hope this grows into one powerful archive:
-<a href="https://github.com/saketkc/fos-proposals">https://github.com/saketkc/fos-proposals</a></p>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/10/14/grch37-v-slash-s-hg19/">GRCh37 v/s Hg19</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-10-14T00:06:21-07:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2014/10/14/grch37-v-slash-s-hg19/#disqus_thread"
-             data-disqus-identifier="http://saket-choudhary.me/blog/2014/10/14/grch37-v-slash-s-hg19/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>GRCh37 is <a href="http://seqanswers.com/forums/archive/index.php/t-9757.html">supposedly</a> the NCBI equivalent of UCSC’s hg19.</p>
+  <entry>
+    <title type="html"><![CDATA[GRCh37 v/s Hg19]]></title>
+    <link href="http://saket-choudhary.me/blog/2014/10/14/grch37-v-slash-s-hg19/"/>
+    <updated>2014-10-14T00:06:21-07:00</updated>
+    <id>http://saket-choudhary.me/blog/2014/10/14/grch37-v-slash-s-hg19</id>
+    <content type="html"><![CDATA[<p>GRCh37 is <a href="http://seqanswers.com/forums/archive/index.php/t-9757.html">supposedly</a> the NCBI equivalent of UCSC’s hg19.</p>
 
 <p>However the forum posts on are not really convincing.
 There are more insights <a href="http://uswest.ensembl.org/Help/Faq?id=286">here</a></p>
@@ -342,7 +178,7 @@ E.g. chr21_gl000210_random.fa.gz
 
 <p>In order to verify that they indeed have atleast the same chromosome lenths I hacked this simple script.</p>
 
-<div><script src="https://gist.github.com/c4a9304db58360972934.js"></script>
+<p><div><script src='https://gist.github.com/c4a9304db58360972934.js'></script>
 <noscript><pre><code>from Bio import SeqIO
 import pickle
 from pprint import pprint
@@ -383,46 +219,16 @@ for i in range(1,23):
     assert(grch37_chromosomes[str(i)] == hg19_chromosomes['chr' + str(i)])
 pickle.dump(pickle_string, open('comparison_pickled.p', 'wb'))
 </code></pre></noscript></div>
-
-</div>
+</p>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/10/12/library-size/">Library Size, Fragment Size, Insert Size</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-10-12T13:51:01-07:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2014/10/12/library-size/#disqus_thread"
-             data-disqus-identifier="http://saket-choudhary.me/blog/2014/10/12/library-size/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Bioinformatics has always been plagued with terms with multi-definitions for the same term. The FastQ format for example remained undocumented until Peter Cock et al. published <a href="http://nar.oxfordjournals.org/content/38/6/1767.long">The Sanger FASTQ file format for sequences with quality scores, and the Solexa/Illumina FASTQ variants</a> </p>
+  <entry>
+    <title type="html"><![CDATA[Library Size, Fragment Size, Insert Size]]></title>
+    <link href="http://saket-choudhary.me/blog/2014/10/12/library-size/"/>
+    <updated>2014-10-12T13:51:01-07:00</updated>
+    <id>http://saket-choudhary.me/blog/2014/10/12/library-size</id>
+    <content type="html"><![CDATA[<p>Bioinformatics has always been plagued with terms with multi-definitions for the same term. The FastQ format for example remained undocumented until Peter Cock et al. published <a href="http://nar.oxfordjournals.org/content/38/6/1767.long">The Sanger FASTQ file format for sequences with quality scores, and the Solexa/Illumina FASTQ variants</a> </p>
 
 <p>I will try to cover a detailed explanation of the following terms , which I have often found to be confusing, thanks to the lack of cohesiveness in Bioinformatics:</p>
 
@@ -465,107 +271,7 @@ The original sequence that was supposed to be sequenced was (50+150+50=) 250 bp 
 
 <p>Reference:
 <a href="http://seqanswers.com/forums/showthread.php?t=13098">Seqanswers</a></p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
-<aside class="sidebar">
-   
-  
-    
-  
-</aside>
-
-
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2015 - Saket Choudhary -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
-
-</footer>
-  
-
-<script type="text/javascript">
-      var disqus_shortname = 'teksophere';
-      
-        
-        var disqus_script = 'count.js';
-      
-    (function () {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    }());
-</script>
-
-
-
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id; js.async = true;
-  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-
-
-  <script type="text/javascript">
-    (function() {
-      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
-      script.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
-    })();
-  </script>
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
-
-
-
-<script>
-  $(document).ready(function() {  
-  var stickyNavTop = $('nav').offset().top;  
-    
-  var stickyNav = function(){  
-  var scrollTop = $(window).scrollTop();  
-         
-  if (scrollTop > stickyNavTop) {   
-      $('nav').addClass('sticky');  
-  } else {  
-      $('nav').removeClass('sticky');   
-  }  
-  };  
-    
-  stickyNav();  
-    
-  $(window).scroll(function() {  
-      stickyNav();  
-  });  
-  });  
-</script>
-
-
-</body>
-</html>
+</feed>

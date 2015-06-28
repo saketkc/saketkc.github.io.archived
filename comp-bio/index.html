@@ -1,0 +1,378 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Comp Bio - Science?!</title>
+  <meta name="author" content="Saket Choudhary">
+  <meta name="google-site-verification" content="a56hrMS1KM6u5S1BBjobvquWlsQHJ7lUruPBF6B1rJM" />
+  
+  <meta name="description" content="Comp Bio Tries Each edge labelled with a character coming from a set of alphabets Each node has atmost one outgoing edge labelled ‘x’. In other &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://saket-choudhary.me/comp-bio">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Science?!" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href='https://fonts.googleapis.com/css?family=Noto+Serif:400,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-55540107-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  jax: ["input/TeX", "output/HTML-CSS"],
+  tex2jax: {
+    inlineMath: [ ['$', '$'] ],
+    displayMath: [ ['$$', '$$']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  messageStyle: "none",
+  "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+});
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+
+<body    class="collapse-sidebar sidebar-footer" >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Science?!</a></h1>
+  
+    <h2>{Saket Choudhary}</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  
+  
+</ul>
+
+<ul class="main-navigation">
+  <li><a href="/about">About</a></li>
+  <li><a href="/pertinent-blog">Math Blog</a></li>
+  <li><a href="/resume" target="_blank">CV</a></li>
+  <li><a href="/talks" target="_blank">Talks</a></li>
+  <li><a href="/publications" target="_blank">Publications</a></li>
+  <li><a href="https://twitter.com/saketkc" target="_blank">Twitter</a></li>
+  <li><a href="https://github.com/saketkc" target="_blank">Github</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article role="article">
+  
+  <header>
+    <h1 class="entry-title">Comp Bio</h1>
+    <p class="meta">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-03-04T17:21:00-08:00" pubdate data-updated="true"></time></p>
+  </header>
+  
+  <h2 id="tries">Tries</h2>
+<ul>
+  <li>Each edge labelled with a character coming from a set of alphabets</li>
+  <li>Each node has atmost one outgoing edge labelled ‘x’. In other words, outgoing
+edges from each node have a unique label</li>
+  <li>To reconstruct the suffix read from root to the leaf</li>
+</ul>
+
+<p>We generally add a special character ‘$’ that is included when constructing the suffix trie</p>
+
+<h2 id="why-add--a-terminating-character">Why add  a terminating character</h2>
+
+<p>Without adding a terminating character if we were to walk down
+from root to track a suffix, we would not end on a leaf but maybe
+somewhere in the middle of internal nodes. So there won’t be a one
+to one mapping.</p>
+
+<p>The nodes can beimagined to have some kind of a lable themselves
+that spells out the suffix till that point</p>
+
+<h2 id="check-if-some-string-is-a-substring-of-t">Check if some string is a substring of T?</h2>
+
+<ul>
+  <li>If S is a substring of T, it is a prefix of some suffix of T</li>
+  <li>Search: Start at root -&gt; go to child -&gt; check if next incoming character of S matches
+to any children -&gt; Go ahead or fall off</li>
+  <li>If you fall off, you fall off for life! S does not occur in T</li>
+  <li>If all characters exhausted -&gt; Done!</li>
+</ul>
+
+<h2 id="checking-if-some-string-is-a-suffix-of-t">Checking if some string is a suffix of T?</h2>
+
+<ul>
+  <li>Walk as if searching for a string</li>
+  <li>Additional constraint: Last node before exhausitng should be a ‘$’</li>
+</ul>
+
+<h2 id="counting-number-of-times">Counting number of times</h2>
+<ul>
+  <li>If we don’t fall off: Number of times = # of lead nodes subrooted at n</li>
+  <li>To count number of leaf nodes = DFS</li>
+</ul>
+
+<h2 id="finding-longest-repeated-substring-of-t">Finding longest repeated substring of T</h2>
+<ul>
+  <li>Look for deepest node with more than one child! [DFS again, keep count of number of leaf nodes per node[Not ecaxtly per node though]]</li>
+</ul>
+
+<h2 id="number-of-nodes-in-a-suffix-trie">Number of nodes in a suffix trie</h2>
+<p>-Motivation: Imagine <code>aaaa$</code> Then there is a branch point at each node=10 nodes in total= 2m+1 nodes=1 root, m node with outgoing to $
+and m with outgoing to a =&gt; 2m+1(Linear)
+- Consider <code>(a)^n(b)^n</code>: 
+    - 1 root
+    - n nodes for b…
+    - n nodes along a-a-a chain
+    - n nodes for each n noded a-a-a chain above with b
+    - 2n+1 leaves(obvious 2n$+$)</p>
+
+<pre><code>In total 2n=m 
+and Total = 2n+1+n^2+2n+1 = n^2+4n+2
+</code></pre>
+
+<h2 id="suffix-tree-bound-on-size">Suffix tree bound on size</h2>
+<ul>
+  <li>Depth = O(m) = length of longest substring = m+1</li>
+  <li>Width  = Max Number of distinct substrings till that length  &lt;= m</li>
+  <li>Order of size = O(m^2)</li>
+</ul>
+
+<h2 id="problem-reduce-suffix-trie-size">Problem: REduce Suffix trie size</h2>
+<ul>
+  <li>Compress non branching paths into single edge. The label is concatenated edgel labels. All internal nodes guaranteed 
+to have more than one children</li>
+  <li>Post edge label compression(Generate a tree(like balanced binary tree) from trie):
+    <ul>
+      <li>Number of leaves: m</li>
+      <li>Number of internal nodes(at max, since this is like a balanced binary tree): m-1</li>
+      <li>Total O(2m-1)? NO</li>
+      <li>the label lengths are still growing so still O(m^2)</li>
+      <li>Solution: Use information from T to encode (offset, length) information throwing away
+  edge labels</li>
+      <li>LEaves hold offsets of the whole suffix that the leaf corresponds to</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="edge-label-compressed-suffix-tree">Edge label compressed Suffix tree</h2>
+<ul>
+  <li>Node depth: Number of edges from root to the destination node(Trivial)</li>
+  <li>Label Depth: Total length of edge labels for edges on path from root to node = Summation of ‘lengths’ from (offset, length) tuple till tbhat node</li>
+</ul>
+
+<h2 id="space-caveat-om-is-really-om-now">Space Caveat: O(m) is really O(m) now?</h2>
+<ul>
+  <li>Space taken bhy edge lables = O(m) since it is storing a integer tuple</li>
+  <li>The integer storage is 64 bits is practical for all purposes</li>
+  <li>32 bits cannot store hg19 suffix tree
+## Building</li>
+  <li>
+    <ol>
+      <li>Build suffix trie =&gt; Merge nodes with one children, relabel. But wasting O(m^2) space!</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>Build  a single edge tree first for the longest suffix =&gt; Augment to include 2nd longest
+=&gt; Augment to include 3rd longest </li>
+    </ol>
+  </li>
+</ul>
+
+<h2 id="suffix-tree-searching-for-substring">Suffix tree: Searching for substring</h2>
+<ul>
+  <li>Kind of trivials since you need to start at root, go to next child with label matching to the first character of S
+and walk down</li>
+  <li>O(n) Stepe1: Walk down the matching path</li>
+  <li>O(k) as it’s a balanced subtree so number of leaf nodes is same as internal noes in the subtree Step2: Match found: Visit all leafs below, reporting each leaf offset as match offset</li>
+  <li>Order(n+k)</li>
+</ul>
+
+<h2 id="longest-common-substring">Longest common substring</h2>
+<ul>
+  <li>S1$1S2$2</li>
+  <li>Point to note: annoate each node depending on whether the leaves below it includesuffixes of S1, S2 or both</li>
+  <li>The deepest node with both S1, S2 represents the longest common substring</li>
+</ul>
+
+  
+    <footer>
+      <p class="meta">
+        
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-03-04T17:21:00-08:00" pubdate data-updated="true"></time>
+        
+      </p>
+      
+        <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://saket-choudhary.me/comp-bio/index.html" data-via="saketkc" data-counturl="http://saket-choudhary.me/comp-bio/index.html" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+      
+    </footer>
+  
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+  <aside class="sidebar">
+   
+  
+    
+  
+</aside>
+
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Saket Choudhary -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'teksophere';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://saket-choudhary.me/comp-bio/index.html';
+        var disqus_url = 'http://saket-choudhary.me/comp-bio/index.html';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+<script>
+  $(document).ready(function() {  
+  var stickyNavTop = $('nav').offset().top;  
+    
+  var stickyNav = function(){  
+  var scrollTop = $(window).scrollTop();  
+         
+  if (scrollTop > stickyNavTop) {   
+      $('nav').addClass('sticky');  
+  } else {  
+      $('nav').removeClass('sticky');   
+  }  
+  };  
+    
+  stickyNav();  
+    
+  $(window).scroll(function() {  
+      stickyNav();  
+  });  
+  });  
+</script>
+
+
+</body>
+</html>
