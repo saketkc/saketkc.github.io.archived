@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Tutorial | Science?!]]></title>
-  <link href="http://saket-choudhary.me/blog/categories/tutorial/atom.xml" rel="self"/>
-  <link href="http://saket-choudhary.me/"/>
-  <updated>2015-06-28T04:02:53-07:00</updated>
-  <id>http://saket-choudhary.me/</id>
+  <link href="http://www.saket-choudhary.me/blog/categories/tutorial/atom.xml" rel="self"/>
+  <link href="http://www.saket-choudhary.me/"/>
+  <updated>2015-06-28T04:07:49-07:00</updated>
+  <id>http://www.saket-choudhary.me/</id>
   <author>
     <name><![CDATA[Saket Choudhary]]></name>
     <email><![CDATA[saketkc@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Library Size, Fragment Size, Insert Size]]></title>
-    <link href="http://saket-choudhary.me/blog/2014/10/12/library-size/"/>
+    <link href="http://www.saket-choudhary.me/blog/2014/10/12/library-size/"/>
     <updated>2014-10-12T13:51:01-07:00</updated>
-    <id>http://saket-choudhary.me/blog/2014/10/12/library-size</id>
+    <id>http://www.saket-choudhary.me/blog/2014/10/12/library-size</id>
     <content type="html"><![CDATA[<p>Bioinformatics has always been plagued with terms with multi-definitions for the same term. The FastQ format for example remained undocumented until Peter Cock et al. published <a href="http://nar.oxfordjournals.org/content/38/6/1767.long">The Sanger FASTQ file format for sequences with quality scores, and the Solexa/Illumina FASTQ variants</a> </p>
 
 <p>I will try to cover a detailed explanation of the following terms , which I have often found to be confusing, thanks to the lack of cohesiveness in Bioinformatics:</p>

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Tutorials, | Science?!]]></title>
-  <link href="http://saket-choudhary.me/blog/categories/tutorials/atom.xml" rel="self"/>
-  <link href="http://saket-choudhary.me/"/>
-  <updated>2015-06-28T04:02:53-07:00</updated>
-  <id>http://saket-choudhary.me/</id>
+  <link href="http://www.saket-choudhary.me/blog/categories/tutorials/atom.xml" rel="self"/>
+  <link href="http://www.saket-choudhary.me/"/>
+  <updated>2015-06-28T04:07:49-07:00</updated>
+  <id>http://www.saket-choudhary.me/</id>
   <author>
     <name><![CDATA[Saket Choudhary]]></name>
     <email><![CDATA[saketkc@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[GRCh37 v/s Hg19]]></title>
-    <link href="http://saket-choudhary.me/blog/2014/10/14/grch37-v-slash-s-hg19/"/>
+    <link href="http://www.saket-choudhary.me/blog/2014/10/14/grch37-v-slash-s-hg19/"/>
     <updated>2014-10-14T00:06:21-07:00</updated>
-    <id>http://saket-choudhary.me/blog/2014/10/14/grch37-v-slash-s-hg19</id>
+    <id>http://www.saket-choudhary.me/blog/2014/10/14/grch37-v-slash-s-hg19</id>
     <content type="html"><![CDATA[<p>GRCh37 is <a href="http://seqanswers.com/forums/archive/index.php/t-9757.html">supposedly</a> the NCBI equivalent of UCSC’s hg19.</p>
 
 <p>However the forum posts on are not really convincing.
