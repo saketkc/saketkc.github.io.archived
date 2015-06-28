@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Gsoc, | Science?!]]></title>
-  <link href="http://saketkc.github.io/blog/categories/gsoc/atom.xml" rel="self"/>
-  <link href="http://saketkc.github.io/"/>
-  <updated>2015-06-28T02:35:03-07:00</updated>
-  <id>http://saketkc.github.io/</id>
+  <link href="http://saket-choudhary.me/blog/categories/gsoc/atom.xml" rel="self"/>
+  <link href="http://saket-choudhary.me/"/>
+  <updated>2015-06-28T03:52:53-07:00</updated>
+  <id>http://saket-choudhary.me/</id>
   <author>
     <name><![CDATA[Saket Choudhary]]></name>
     <email><![CDATA[saketkc@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Fos-proposals]]></title>
-    <link href="http://saketkc.github.io/blog/2015/03/29/fos-proposals/"/>
+    <link href="http://saket-choudhary.me/blog/2015/03/29/fos-proposals/"/>
     <updated>2015-03-29T01:46:50-07:00</updated>
-    <id>http://saketkc.github.io/blog/2015/03/29/fos-proposals</id>
+    <id>http://saket-choudhary.me/blog/2015/03/29/fos-proposals</id>
     <content type="html"><![CDATA[<p><a href="https://www.google-melange.com/gsoc/homepage/google/gsoc2015">GSoC 2015</a> application
 period just got over couple of days ago. I received at least 3 requests asking
 me for my previous proposals. This made me realise, that even though
