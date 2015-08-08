@@ -5,13 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Fos-proposals - Science?!</title>
+  <title>Motif Directionality - Science?!</title>
   <meta name="author" content="Saket Choudhary">
   <meta name="google-site-verification" content="a56hrMS1KM6u5S1BBjobvquWlsQHJ7lUruPBF6B1rJM" />
   
-  <meta name="description" content="GSoC 2015 application
-period just got over couple of days ago. I received at least 3 requests asking
-me for my previous proposals. This made me &hellip;">
+  <meta name="description" content="A motif in a DNA sequence represents a short, recurring pattern that often has biological
+implications[1]. They often play role as specific binding &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +19,7 @@ me for my previous proposals. This made me &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://www.saket-choudhary.me/blog/2015/03/29/fos-proposals">
+  <link rel="canonical" href="http://www.saket-choudhary.me/blog/2015/08/07/motif-directionality">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Science?!" type="application/atom+xml">
@@ -96,7 +95,7 @@ MathJax.Hub.Config({
   
   <header>
     
-      <h1 class="entry-title">Fos-proposals</h1>
+      <h1 class="entry-title">Motif Directionality</h1>
     
     
       <p class="meta">
@@ -112,7 +111,7 @@ MathJax.Hub.Config({
   
 
 
-<time datetime="2015-03-29T01:46:50-07:00" pubdate data-updated="true"></time>
+<time datetime="2015-08-07T17:37:11-07:00" pubdate data-updated="true"></time>
         
            | <a href="#disqus_thread"
              data-disqus-identifier="http://www.saket-choudhary.me">Comments</a>
@@ -122,25 +121,52 @@ MathJax.Hub.Config({
   </header>
 
 
-<div class="entry-content"><p><a href="https://www.google-melange.com/gsoc/homepage/google/gsoc2015">GSoC 2015</a> application
-period just got over couple of days ago. I received at least 3 requests asking
-me for my previous proposals. This made me realise, that even though
-they were always publicly available on Google-melange, the way melange works
-makes such public proposals almost un-discoverable and probably un-indexable
-too.</p>
+<div class="entry-content"><p>A motif in a DNA sequence represents a short, recurring pattern that often has biological
+implications[1]. They often play role as specific binding sites for transcription factors and other 
+proteins. </p>
 
-<p>Most of my proposals were written using Google Docs, since it makes life
-easy for the mentors to track changes and comment. But they are still un-discoverable
-in this form.</p>
+<p>While investigating motifs and their sites generated using MEME and FIMO[2], I came across a trivial issue.
+MEME is a tool for motif discovery while FIMO outputs the sites where a particular motif is found.</p>
 
-<p>I decided to create a repository porting all my previous proposals to markdown.
-<code>pandoc</code> has turned out to be really powerful. I didn’t want to just host my 
-own proposals so I tried keeping the format very generic. I sent out couple
-of emails to past GSoC participants asking them if they would like to push theirs too.</p>
+<p>Examplei(this is a modified form of the original FIMO output):</p>
 
-<p>I hope this grows into one powerful archive:
-<a href="https://github.com/saketkc/fos-proposals">https://github.com/saketkc/fos-proposals</a></p>
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">chrom	start   stop    strand  score   p-value q-value sequence
+</span><span class="line">chr19	8386315	8386328	+	100	3.04e-07	0.0008	TGGTATCGCGAGAC
+</span><span class="line">chr19	8386317	8386330	-	100	3.05e-08	0.006	CCGTCTCGCGATAC	</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p>Motifs are generally described using position weight matrix where each base A,T,G,C takes
+a value for 0 to 1, depending on how frequently that base occurs at that position.</p>
 
+<p>If you ignore the strand information, the two sites are not in sync, which should be apparent from their
+start and stop coordinates. </p>
+
+<p>the case of ‘+’ strand is pretty straightforward, but to decipher the start and stop cooridnates for ‘-‘ 
+strand, required me to draw this diagram:</p>
+
+<p><code>  </code><code>                      --&gt;
+           0123456789012345
++  5'------TGGTATCGCGAGACGG-------3'
+           ||||||||||||||||
+-  3'------ACCATAGCGCTCTGCC-------5'
+           5432109876543210
+           &lt;--
+&lt;div class='bogus-wrapper'&gt;&lt;notextile&gt;&lt;figure class='code'&gt;&lt;div class="highlight"&gt;&lt;table&gt;&lt;tr&gt;&lt;td class="gutter"&gt;&lt;pre class="line-numbers"&gt;&lt;span class='line-number'&gt;1&lt;/span&gt;
+&lt;span class='line-number'&gt;2&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;td class='code'&gt;&lt;pre&gt;&lt;code class=''&gt;&lt;span class='line'&gt;
+&lt;/span&gt;&lt;span class='line'&gt;To elaborate:&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/figure&gt;&lt;/notextile&gt;&lt;/div&gt;
+0 on the far left of + is position 8386315
+0 and the far right of - is position 8386330
+The arrows indicate the directionality of motif, yes there is one!
+</code>``</p>
+
+<h1 id="reference">Reference</h1>
+
+<ol>
+  <li>[What are DNA sequence motifs?] (http://www.nature.com/nbt/journal/v24/n4/full/nbt0406-423.html)</li>
+  <li><a href="http://nar.oxfordjournals.org/content/37/suppl_2/W202.full">MEME Suite: Tools for motif discovery and searching</a> </li>
+</ol>
 </div>
 
 
@@ -163,21 +189,15 @@ of emails to past GSoC participants asking them if they would like to push their
   
 
 
-<time datetime="2015-03-29T01:46:50-07:00" pubdate data-updated="true"></time>
+<time datetime="2015-08-07T17:37:11-07:00" pubdate data-updated="true"></time>
       
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/gsoc/'>gsoc,</a>, <a class='category' href='/blog/categories/open/'>open</a>, <a class='category' href='/blog/categories/source/'>source</a>
-  
-</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.saket-choudhary.me/blog/2015/03/29/fos-proposals/" data-via="saketkc" data-counturl="http://www.saket-choudhary.me/blog/2015/03/29/fos-proposals/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.saket-choudhary.me/blog/2015/08/07/motif-directionality/" data-via="saketkc" data-counturl="http://www.saket-choudhary.me/blog/2015/08/07/motif-directionality/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -190,10 +210,8 @@ of emails to past GSoC participants asking them if they would like to push their
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/10/14/grch37-v-slash-s-hg19/" title="Previous Post: GRCh37 v/s hg19">&laquo; GRCh37 v/s hg19</a>
+        <a class="basic-alignment left" href="/blog/2015/03/29/fos-proposals/" title="Previous Post: Fos-proposals">&laquo; Fos-proposals</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2015/08/07/motif-directionality/" title="Next Post: Motif directionality">Motif directionality &raquo;</a>
       
     </p>
   </footer>
@@ -231,8 +249,8 @@ of emails to past GSoC participants asking them if they would like to push their
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://www.saket-choudhary.me/blog/2015/03/29/fos-proposals/';
-        var disqus_url = 'http://www.saket-choudhary.me/blog/2015/03/29/fos-proposals/';
+        var disqus_identifier = 'http://www.saket-choudhary.me/blog/2015/08/07/motif-directionality/';
+        var disqus_url = 'http://www.saket-choudhary.me/blog/2015/08/07/motif-directionality/';
         var disqus_script = 'embed.js';
       
     (function () {

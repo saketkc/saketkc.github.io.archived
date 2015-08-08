@@ -4,7 +4,7 @@
   <title><![CDATA[Science?!]]></title>
   <link href="http://www.saket-choudhary.me/atom.xml" rel="self"/>
   <link href="http://www.saket-choudhary.me/"/>
-  <updated>2015-06-28T04:07:49-07:00</updated>
+  <updated>2015-08-07T18:12:42-07:00</updated>
   <id>http://www.saket-choudhary.me/</id>
   <author>
     <name><![CDATA[Saket Choudhary]]></name>
@@ -12,6 +12,60 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Motif Directionality]]></title>
+    <link href="http://www.saket-choudhary.me/blog/2015/08/07/motif-directionality/"/>
+    <updated>2015-08-07T17:37:11-07:00</updated>
+    <id>http://www.saket-choudhary.me/blog/2015/08/07/motif-directionality</id>
+    <content type="html"><![CDATA[<p>A motif in a DNA sequence represents a short, recurring pattern that often has biological
+implications[1]. They often play role as specific binding sites for transcription factors and other 
+proteins. </p>
+
+<p>While investigating motifs and their sites generated using MEME and FIMO[2], I came across a trivial issue.
+MEME is a tool for motif discovery while FIMO outputs the sites where a particular motif is found.</p>
+
+<p>Examplei(this is a modified form of the original FIMO output):</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">chrom	start   stop    strand  score   p-value q-value sequence
+</span><span class="line">chr19	8386315	8386328	+	100	3.04e-07	0.0008	TGGTATCGCGAGAC
+</span><span class="line">chr19	8386317	8386330	-	100	3.05e-08	0.006	CCGTCTCGCGATAC	</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p>Motifs are generally described using position weight matrix where each base A,T,G,C takes
+a value for 0 to 1, depending on how frequently that base occurs at that position.</p>
+
+<p>If you ignore the strand information, the two sites are not in sync, which should be apparent from their
+start and stop coordinates. </p>
+
+<p>the case of ‘+’ strand is pretty straightforward, but to decipher the start and stop cooridnates for ‘-‘ 
+strand, required me to draw this diagram:</p>
+
+<p><code>  </code><code>                      --&gt;
+           0123456789012345
++  5'------TGGTATCGCGAGACGG-------3'
+           ||||||||||||||||
+-  3'------ACCATAGCGCTCTGCC-------5'
+           5432109876543210
+           &lt;--
+&lt;div class='bogus-wrapper'&gt;&lt;notextile&gt;&lt;figure class='code'&gt;&lt;div class="highlight"&gt;&lt;table&gt;&lt;tr&gt;&lt;td class="gutter"&gt;&lt;pre class="line-numbers"&gt;&lt;span class='line-number'&gt;1&lt;/span&gt;
+&lt;span class='line-number'&gt;2&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;td class='code'&gt;&lt;pre&gt;&lt;code class=''&gt;&lt;span class='line'&gt;
+&lt;/span&gt;&lt;span class='line'&gt;To elaborate:&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/figure&gt;&lt;/notextile&gt;&lt;/div&gt;
+0 on the far left of + is position 8386315
+0 and the far right of - is position 8386330
+The arrows indicate the directionality of motif, yes there is one!
+</code>``</p>
+
+<h1 id="reference">Reference</h1>
+
+<ol>
+  <li>[What are DNA sequence motifs?] (http://www.nature.com/nbt/journal/v24/n4/full/nbt0406-423.html)</li>
+  <li><a href="http://nar.oxfordjournals.org/content/37/suppl_2/W202.full">MEME Suite: Tools for motif discovery and searching</a> </li>
+</ol>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Fos-proposals]]></title>
