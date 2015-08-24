@@ -11,6 +11,9 @@ Google Scholar: [https://scholar.google.com/citations?user=BmC4P-oAAAAJ](https:/
 
 ## Journal/Conference
 
+- Yachdav G, Goldberg T, Wilzbach S, Dao D, Shish I, _Choudhary S_, et al. Anatomy of BioJS, an open source community for the life sciences. eLife. 2015;4:e07009.
+[http://dx.doi.org/10.7554/eLife.07009](http://dx.doi.org/10.7554/eLife.07009) [PDF](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4495654/pdf/elife07009.pdf)
+
 - _Choudhary, S. K._, & Noronha, S. B. (2014). GalDrive: Pipeline for comparative identification of driver mutations using the Galaxy framework. bioRxiv, 010538.
   [http://dx.doi.org/10.1101/010538](http://dx.doi.org/10.1101/010538) [PDF](http://www-scf.usc.edu/~skchoudh/files/galdrive.pdf)
 
