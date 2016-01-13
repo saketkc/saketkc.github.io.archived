@@ -4,7 +4,7 @@
   <title><![CDATA[Science?!]]></title>
   <link href="http://www.saket-choudhary.me/atom.xml" rel="self"/>
   <link href="http://www.saket-choudhary.me/"/>
-  <updated>2015-10-29T11:39:26-07:00</updated>
+  <updated>2016-01-13T11:34:45-08:00</updated>
   <id>http://www.saket-choudhary.me/</id>
   <author>
     <name><![CDATA[Saket Choudhary]]></name>
@@ -12,6 +12,20 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Motif Logos]]></title>
+    <link href="http://www.saket-choudhary.me/blog/2016/01/11/motif-logos/"/>
+    <updated>2016-01-11T00:02:05-08:00</updated>
+    <id>http://www.saket-choudhary.me/blog/2016/01/11/motif-logos</id>
+    <content type="html"><![CDATA[<p>DNA Sequence Motifs are recurring patterns in DNA that are associated with some biological function.
+They are encountered quite frequently while studying transcription regulation. 
+Transcription factor binding is DNA sequence specific. The TF protein’s binding to DNA
+depends is dependent on the specificity of DNA binding. This kind of sequence specific
+binding also happens in other processes such as the     </p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Motif Directionality]]></title>
