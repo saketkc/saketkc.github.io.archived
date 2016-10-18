@@ -1,0 +1,487 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>GRCh37 v/s Hg19 - Science?!</title>
+  <meta name="author" content="Saket Choudhary">
+  <meta name="google-site-verification" content="a56hrMS1KM6u5S1BBjobvquWlsQHJ7lUruPBF6B1rJM" />
+  
+  <meta name="description" content="GRCh37 is supposedly the NCBI equivalent of UCSC’s hg19. However the forum posts on are not really convincing.
+There are more insights here &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://www.saket-choudhary.me/blog/2014/10/14/grch37-v-slash-s-hg19">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Science?!" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href='https://fonts.googleapis.com/css?family=Noto+Serif:400,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-55540107-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  jax: ["input/TeX", "output/HTML-CSS"],
+  tex2jax: {
+    inlineMath: [ ['$', '$'] ],
+    displayMath: [ ['$$', '$$']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  messageStyle: "none",
+  "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+});
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+
+<body    class="collapse-sidebar sidebar-footer" >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Science?!</a></h1>
+  
+    <h2>{Saket Choudhary}</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  
+  
+</ul>
+
+<ul class="main-navigation">
+  <li><a href="/about">About</a></li>
+  <li><a href="/pertinent-blog">Math Blog</a></li>
+  <li><a href="/math-screening-solutions">USC Screening Exam Solutions</a></li>
+  <li><a href="/resume" target="_blank">CV</a></li>
+  <li><a href="/talks" target="_blank">Talks</a></li>
+  <li><a href="/publications" target="_blank">Publications</a></li>
+  <li><a href="https://twitter.com/saketkc" target="_blank">Twitter</a></li>
+  <li><a href="https://github.com/saketkc" target="_blank">Github</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">GRCh37 v/s Hg19</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-10-14T00:06:21-07:00" pubdate data-updated="true"></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://www.saket-choudhary.me">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>GRCh37 is <a href="http://seqanswers.com/forums/archive/index.php/t-9757.html">supposedly</a> the NCBI equivalent of UCSC’s hg19.</p>
+
+<p>However the forum posts on are not really convincing.
+There are more insights <a href="http://uswest.ensembl.org/Help/Faq?id=286">here</a></p>
+
+<p>Condensing:</p>
+
+<p>Point #1: Ensembl uses a one-based coordinate system, whereas UCSC uses a zero-based coordinate system.</p>
+
+<pre><code>    Ensembl:  ATCG
+              1234
+    UCSC:     ATCG
+              0123
+</code></pre>
+
+<p>For display UCSC browser <a href="http://genome.ucsc.edu/FAQ/FAQtracks.html#tracks1">uses 1-based coordinate system</a>.</p>
+
+<p>Point #2: Ensembl uses the most recently updated human genome housed at the GRC.
+This current major assembly release is called GRCh38. NCBI and UCSC use the same genome.
+UCSC refers to the recent human genome as GRCh38/hg38. Before all that let’s see what these coordinate sytems
+are all about. Blatantly copying from the SAM1 specification[http://samtools.github.io/hts-specs/SAMv1.pdf]:</p>
+
+<blockquote>
+  <p>1-based coordinate system: A coordinate system where the first base of a sequence is one. In this
+coordinate system, a region is specified by a closed interval. For example, the region between
+the 3rd and the 7th bases inclusive is [3, 7]. The SAM, VCF, GFF and Wiggle formats are using
+the 1-based coordinate system.</p>
+</blockquote>
+
+<blockquote>
+  <p>0-based coordinate system: A coordinate system where the first base of a sequence is zero. In this
+coordinate system, a region is specified by a half-closed-half-open interval. For example, the
+region between the 3rd and the 7th bases inclusive is [2, 7). The BAM, BCFv2, BED, and PSL
+formats are using the 0-based coordinate system.]</p>
+</blockquote>
+
+<p>Let’s take an example here:</p>
+
+<pre><code>    chrX  	|  A  |  T  |  G  |  C  |  A  |  T  |  C  |  G  |
+    0-based	0  |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8
+    1-based    1	     2     3     4     5     6     7     8
+</code></pre>
+
+<p>So expanding from the SAM1 specifications,</p>
+
+<ol>
+  <li>
+    <p>Ranged nucleotides will be represented as:</p>
+
+    <p>i) 0-based chrX:2-7 GCATC  <br />
+ii) 1-based chrX:3-7 GCATC</p>
+  </li>
+  <li>
+    <p>From point 1. a single nucleotide is represented as:</p>
+
+    <p>i) 0-based chrX:7-8 G  <br />
+ ii) 1-based chrX:8-8 G</p>
+  </li>
+  <li>
+    <p>SNPs will be:</p>
+
+    <p>i) 0-based chrX:7-8 G/A<br />
+ ii) 1-based chrX:8-8 G/A</p>
+
+    <p>Insertions and deletions are tricky:</p>
+
+    <pre><code> chrX        |  A  |  T  |  G  |  C  |  A  |  T  |  C  |  C  |  ATC  G  |
+ 0-based     0  |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8       |  9
+ 1-based        1     2     3     4     5     6     7     8          9
+</code></pre>
+  </li>
+</ol>
+
+<p>ATC is inserted in between C &amp; G of the original sequence.</p>
+
+<ol>
+  <li>
+    <p>INSertions:</p>
+
+    <p>i) 0-based chrX:8-8 -/ATC  <br />
+ii) 1-based chrX:8-9 -/ATC</p>
+  </li>
+  <li>
+    <p>DELetion:</p>
+
+    <p>i) 0-based chrX:4-5 A/-  <br />
+ii) 1-based chrX:5-5 A/-</p>
+  </li>
+</ol>
+
+<p>Example [https://code.google.com/p/bedtools/wiki/FAQ#What_does_zero-based,_half-open_mean?]: </p>
+
+<pre><code>$ cat first_base.bed
+chr1    0       1       i-am-the-first-position-on-chrom1
+</code></pre>
+
+<p>Given the examples the conversion is straightforward:</p>
+
+<pre><code>For nucleotides, SNP, DEL:
+        (1-based start) = (0-based start + 1)
+        (1-based end)   = (0-based end)
+For insertion:
+        (1-based start) = (0-based start)
+        (1-based end)   = (0-based end + 1)
+</code></pre>
+
+<p>Why a 0-based system?
+It makes the calculations simple:
+Consider chrX0-2 ATC &amp; chrX1-4 ATCG</p>
+
+<pre><code>ATC
+ ATCG
+Length of overlap = min(end1, end2) - max(start1, start2) = 2-0 = 2 Whereas for a 1-based system:
+   
+chrX1-3 ATC &amp; chrX2-5 ATCG
+ATC
+ ATCG
+Length of overlap = min(end1, end2) - max(start1, start2) = 3-2 = 1 =&gt; WRONG! Why? You need to add 1
+</code></pre>
+
+<p>It is intuitive if you think of the numbers between(including) 1 &amp; 5 is  5-1+1=5! [1,2,3,4,5]</p>
+
+<p>An important note for uploading data to UCSC Genome browser:
+&gt; If you submit data to the browser in position format (chr#:##-##), the browser assumes this information is 1-based. If you submit data in any other format (BED (chr# ## ##) or otherwise), the browser will assume it is 0-based.You can see this both in our liftOver utility and in our search bar, by entering the same numbers in position or BED format and observing the results. Similarly, any data returned by the browser in position format is 1-based, while data returned in BED format is 0-based.</p>
+
+<p>Coming back to hg19 and GRCh37 stuff,</p>
+
+<p>The GRCh37 assembly defintion is at: ftp://ftp.ncbi.nlm.nih.gov/genomes/ASSEMBLY_REPORTS/All/GCF_000001405.13.assembly.txt</p>
+
+<p>Besides Chromosomes 1-22, there are these things called ‘unlocalized-scaffold’ and ‘unplaced-scaffold’.</p>
+
+<p>Let’s head over to the definitions of the Consortium: http://www.ncbi.nlm.nih.gov/projects/genome/assembly/grc/info/definitions.shtml</p>
+
+<pre><code>**unlocalized-scaffold**:
+A sequence found in an assembly that is associated with a specific chromosome but cannot be ordered or oriented on that chromosome.
+e.g HSCHR17_RANDOM_CTG2 associated with chromosome 17, but cannot be oriented on it
+
+**unplaced-scaffold**:
+A sequence found in an assembly that is not associated with any chromosome.
+e.g. HSCHRUN_RANDOM_CTG2
+</code></pre>
+
+<p>hg19 equivalent <a href="http://genome.ucsc.edu/FAQ/FAQdownloads.html#download12">definitions</a>, and corresponding <a href="http://hgdownload.cse.ucsc.edu/goldenpath/hg19/chromosomes/">data</a></p>
+
+<pre><code>**chrN_random_[table]**:
+In the past, these tables contained data related to sequence that is known to be in a particular chromosome, but could not be reliably ordered within the current sequence.
+E.g. chr21_gl000210_random.fa.gz
+</code></pre>
+
+<p><strong>ChrUn:</strong>
+    ChrUn contains clone contigs that can’t be confidently placed on a specific chromosome.
+    E.g  chrUn_gl000237</p>
+
+<p>Another note:</p>
+
+<p>UCSC’s hg19 has chrM as the mitochondiral DNA.
+&gt; Note on chrM: Since the release of the UCSC hg19 assembly, the Homo sapiens mitochondrion sequence (represented as “chrM” in the Genome Browser) has been replaced in GenBank with the record NC_012920. We have not replaced the original sequence, NC_001807, in the hg19 Genome Browser. We plan to use the Revised Cambridge Reference Sequence (rCRS, http://mitomap.org/bin/view.pl/MITOMAP/HumanMitoSeq) in the next human assembly release</p>
+
+<p>In order to verify that they indeed have atleast the same chromosome lenths I hacked this simple script.</p>
+
+<div><script src="https://gist.github.com/c4a9304db58360972934.js"></script>
+<noscript><pre><code>from Bio import SeqIO
+import pickle
+from pprint import pprint
+import sys
+hg19_location = &quot;/usr/local/share/bcbio/genomes/Hsapiens/hg19/hg19.fa&quot;
+grch37_location = &quot;/usr/local/share/bcbio/genomes/Hsapiens/GRCh37/bowtie/GRCh37.fa&quot;
+try:
+    pickled = pickle.load(open(&#39;comparison_pickled.p&#39;, &#39;rb&#39;))
+    print (pickled)
+    sys.exit(0)
+except Exception as e:
+    print e
+hg19_handle = open(hg19_location, &#39;rU&#39;)
+hg19_chromosomes = {}
+for record in SeqIO.parse(hg19_handle,  &#39;fasta&#39;):
+    hg19_chromosomes[record.id] = len(record)
+hg19_handle.close()
+
+
+grch37_handle = open(grch37_location, &#39;rU&#39;)
+grch37_chromosomes = {}
+for record in SeqIO.parse(grch37_handle, &#39;fasta&#39;):
+    grch37_chromosomes[record.id] = len(record)
+grch37_handle.close()
+
+
+pickle_string = &quot;GRCh37\n&quot;
+for key, value in grch37_chromosomes.iteritems():
+    pickle_string +=  key + &quot;:&quot;  + str(value) + &quot;\n&quot;
+
+pickle_string += &quot;\nhg19\n&quot;
+for key, value in hg19_chromosomes.iteritems():
+    pickle_string +=  key + &quot;:&quot; + str(value) + &quot;\n&quot;
+
+
+for i in range(1,23):
+    pickle_string += str(i) + &quot; =&gt; &quot; + &quot;GRCh37: &quot; + str(grch37_chromosomes[str(i)]) + &quot; || hg19: &quot; + str(hg19_chromosomes[&#39;chr&#39; + str(i)]) + &quot;\n&quot;
+    assert(grch37_chromosomes[str(i)] == hg19_chromosomes[&#39;chr&#39; + str(i)])
+pickle.dump(pickle_string, open(&#39;comparison_pickled.p&#39;, &#39;wb&#39;))
+</code></pre></noscript></div>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Saket Choudhary</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-10-14T00:06:21-07:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/bioinformatics/'>bioinformatics,</a>, <a class='category' href='/blog/categories/tutorials/'>tutorials,</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.saket-choudhary.me/blog/2014/10/14/grch37-v-slash-s-hg19/" data-via="saketkc" data-counturl="http://www.saket-choudhary.me/blog/2014/10/14/grch37-v-slash-s-hg19/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/10/12/library-size/" title="Previous Post: library size, fragment size, insert size">&laquo; library size, fragment size, insert size</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2015/03/29/fos-proposals/" title="Next Post: Fos-proposals">Fos-proposals &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+  <aside class="sidebar">
+   
+  
+    
+  
+</aside>
+
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2016 - Saket Choudhary -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'teksophere';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.saket-choudhary.me/blog/2014/10/14/grch37-v-slash-s-hg19/';
+        var disqus_url = 'http://www.saket-choudhary.me/blog/2014/10/14/grch37-v-slash-s-hg19/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+<script>
+  $(document).ready(function() {  
+  var stickyNavTop = $('nav').offset().top;  
+    
+  var stickyNav = function(){  
+  var scrollTop = $(window).scrollTop();  
+         
+  if (scrollTop > stickyNavTop) {   
+      $('nav').addClass('sticky');  
+  } else {  
+      $('nav').removeClass('sticky');   
+  }  
+  };  
+    
+  stickyNav();  
+    
+  $(window).scroll(function() {  
+      stickyNav();  
+  });  
+  });  
+</script>
+
+
+</body>
+</html>

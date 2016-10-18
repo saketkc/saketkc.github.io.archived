@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Tutorial | Science?!]]></title>
+  <link href="http://www.saket-choudhary.me/blog/categories/tutorial/atom.xml" rel="self"/>
+  <link href="http://www.saket-choudhary.me/"/>
+  <updated>2016-10-18T00:44:14-07:00</updated>
+  <id>http://www.saket-choudhary.me/</id>
+  <author>
+    <name><![CDATA[Saket Choudhary]]></name>
+    <email><![CDATA[saketkc@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Library Size, Fragment Size, Insert Size]]></title>
+    <link href="http://www.saket-choudhary.me/blog/2014/10/12/library-size/"/>
+    <updated>2014-10-12T13:51:01-07:00</updated>
+    <id>http://www.saket-choudhary.me/blog/2014/10/12/library-size</id>
+    <content type="html"><![CDATA[<p>Bioinformatics has always been plagued with terms with multi-definitions for the same term. The FastQ format for example remained undocumented until Peter Cock et al. published <a href="http://nar.oxfordjournals.org/content/38/6/1767.long">The Sanger FASTQ file format for sequences with quality scores, and the Solexa/Illumina FASTQ variants</a> </p>
+
+<p>I will try to cover a detailed explanation of the following terms , which I have often found to be confusing, thanks to the lack of cohesiveness in Bioinformatics:</p>
+
+<ul>
+  <li>library size</li>
+  <li>fragment size</li>
+  <li>insert size</li>
+</ul>
+
+<p><a href="http://samtools.github.io/hts-specs/SAMv1.pdf">SAMv1 specification</a> defines a ‘TLEN’ term in the alignment section:
+&gt; TLEN: signed observed Template LENgth. If all segments are mapped to the same reference, the unsigned observed template length equals the number of bases from the leftmost mapped base to the rightmost mapped base. The leftmost segment has a plus sign and the rightmost has a minus sign. The sign of segments in the middle is undefined. It is set as 0 for single-segment template or when the information is unavailable.</p>
+
+<p>Going by this definition the ‘insert size’ <em>should</em> mean: The total length of the original <em>piece</em>  being sequenced(without adapters!).
+Let’s pick an example from <a href="http://seqanswers.com/forums/showthread.php?t=13098">Seqanswers</a>, slightly modified here. Reads R_1 and R_2 are paired end reads, sequencing the same sequence from two opposite ends. We want to sequence the ‘<em>Piece to be Sequenced</em>’.</p>
+
+<pre><code>Piece to be Sequenced:                       |=====50=====|==========150==========|=====50=====|
+Fragment=Piece + Sequencing Adapters: |~~20~~|=====50=====|==========150==========|=====50=====|~~20~~|    
+Reads(Paired End):                           |-----------&gt;|                       |&lt;-----------|    
+                                                  R_1                                  R_2
+Inner Mate Distance:                                      |==========150==========|         
+</code></pre>
+
+<p>Sequencing chops the DNA into shorter <em>pieces</em>, and these <em>pieces</em> are ligated with adapter sequences.Though we started with <code>Piece to be sequenced</code> it was ligated with sequencing adapters on both sides.<br />
+The original sequence that was supposed to be sequenced was (50+150+50=) 250 bp long. However while the DNA was cut, the ligation step added extra bases at both ends of this <em>piece</em> so that it is now (20+50+150+50+20=) 290 bp long and this ‘piece+ligated sequence adapters’ are called ‘Fragment’(This is the reason I chose the word <em>‘piece’</em> to denote the part of DNA to be sequenced). Generally sequencing begins after adapter sequences. This is the reason R_1 and R_2 do not cover the 20 bp adapter sequences. In any case I assume the reads have been trimmed to remove the adapter sequences. The 150 bp sequence that is left <em>unsequenced</em> here is the distance between mate pairs, or the Inner Mate Distance.</p>
+
+<p>Summarizing with respect to the above example:</p>
+
+<pre><code>    Insert Size      = 50+150+50        = 250
+    Fragment Size    = 20+50+150+50+20  = 290 
+    Library Size     = 20+50+150+50+20  = 290
+    Inner Mate Distance                 = 150            
+</code></pre>
+
+<p>Condensing:</p>
+
+<pre><code>    Insert           = Sequence without the adapters(The original DNA chunk)
+    Fragment         = Insert Size + Right/Left flanking adapters
+    Inner Mate       = Gap between the mate pair reads
+</code></pre>
+
+<p>Reference:
+<a href="http://seqanswers.com/forums/showthread.php?t=13098">Seqanswers</a></p>
+]]></content>
+  </entry>
+  
+</feed>

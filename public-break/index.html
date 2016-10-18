@@ -1,0 +1,664 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Science?!</title>
+  <meta name="author" content="Saket Choudhary">
+  <meta name="google-site-verification" content="a56hrMS1KM6u5S1BBjobvquWlsQHJ7lUruPBF6B1rJM" />
+  
+  <meta name="description" content="A motif in a DNA sequence represents a short, recurring pattern that often has biological
+implications[1]. They often play role as specific binding &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://www.saket-choudhary.me">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Science?!" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href='https://fonts.googleapis.com/css?family=Noto+Serif:400,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-55540107-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  jax: ["input/TeX", "output/HTML-CSS"],
+  tex2jax: {
+    inlineMath: [ ['$', '$'] ],
+    displayMath: [ ['$$', '$$']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  messageStyle: "none",
+  "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+});
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+
+<body    class="collapse-sidebar sidebar-footer" >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Science?!</a></h1>
+  
+    <h2>{Saket Choudhary}</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  
+  
+</ul>
+
+<ul class="main-navigation">
+  <li><a href="/about">About</a></li>
+  <li><a href="/pertinent-blog">Math Blog</a></li>
+  <li><a href="/math-screening-solutions">USC Screening Exam Solutions</a></li>
+  <li><a href="/resume" target="_blank">CV</a></li>
+  <li><a href="/talks" target="_blank">Talks</a></li>
+  <li><a href="/publications" target="_blank">Publications</a></li>
+  <li><a href="https://twitter.com/saketkc" target="_blank">Twitter</a></li>
+  <li><a href="https://github.com/saketkc" target="_blank">Github</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/08/07/motif-directionality/">Motif Directionality</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-08-07T17:37:11-07:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2015/08/07/motif-directionality/#disqus_thread"
+             data-disqus-identifier="http://www.saket-choudhary.me/blog/2015/08/07/motif-directionality/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>A motif in a DNA sequence represents a short, recurring pattern that often has biological
+implications[1]. They often play role as specific binding sites for transcription factors and other 
+proteins. </p>
+
+<p>While investigating motifs and their sites generated using MEME and FIMO[2], I came across a trivial issue.
+MEME is a tool for motif discovery while FIMO outputs the sites where a particular motif is found.</p>
+
+<p>Examplei(this is a modified form of the original FIMO output):</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">chrom	start   stop    strand  score   p-value q-value sequence
+</span><span class="line">chr19	8386315	8386328	+	100	3.04e-07	0.0008	TGGTATCGCGAGAC
+</span><span class="line">chr19	8386317	8386330	-	100	3.05e-08	0.006	CCGTCTCGCGATAC	</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p>Motifs are generally described using position weight matrix where each base A,T,G,C takes
+a value for 0 to 1, depending on how frequently that base occurs at that position.</p>
+
+<p>If you ignore the strand information, the two sites are not in sync, which should be apparent from their
+start and stop coordinates. </p>
+
+<p>the case of ‘+’ strand is pretty straightforward, but to decipher the start and stop cooridnates for ‘-‘ 
+strand, required me to draw this diagram:</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">                    --&gt;
+</span><span class="line">       0123456789012345
+</span><span class="line">+  5'------TGGTATCGCGAGACGG-------3'
+</span><span class="line">       ||||||||||||||||
+</span><span class="line">-  3'------ACCATAGCGCTCTGCC-------5'
+</span><span class="line">       5432109876543210
+</span><span class="line">       &lt;--
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>To elaborate:</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">0 on the far left of + is position 8386315
+</span><span class="line">0 and the far right of - is position 8386330
+</span><span class="line">The arrows indicate the directionality of motif, yes there is one!</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h1 id="reference">Reference</h1>
+
+<ol>
+  <li>[What are DNA sequence motifs?] (http://www.nature.com/nbt/journal/v24/n4/full/nbt0406-423.html)</li>
+  <li><a href="http://nar.oxfordjournals.org/content/37/suppl_2/W202.full">MEME Suite: Tools for motif discovery and searching</a> </li>
+</ol>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/03/29/fos-proposals/">Fos-proposals</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-03-29T01:46:50-07:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2015/03/29/fos-proposals/#disqus_thread"
+             data-disqus-identifier="http://www.saket-choudhary.me/blog/2015/03/29/fos-proposals/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="https://www.google-melange.com/gsoc/homepage/google/gsoc2015">GSoC 2015</a> application
+period just got over couple of days ago. I received at least 3 requests asking
+me for my previous proposals. This made me realise, that even though
+they were always publicly available on Google-melange, the way melange works
+makes such public proposals almost un-discoverable and probably un-indexable
+too.</p>
+
+<p>Most of my proposals were written using Google Docs, since it makes life
+easy for the mentors to track changes and comment. But they are still un-discoverable
+in this form.</p>
+
+<p>I decided to create a repository porting all my previous proposals to markdown.
+<code>pandoc</code> has turned out to be really powerful. I didn’t want to just host my 
+own proposals so I tried keeping the format very generic. I sent out couple
+of emails to past GSoC participants asking them if they would like to push theirs too.</p>
+
+<p>I hope this grows into one powerful archive:
+<a href="https://github.com/saketkc/fos-proposals">https://github.com/saketkc/fos-proposals</a></p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/10/14/grch37-v-slash-s-hg19/">GRCh37 v/s Hg19</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-10-14T00:06:21-07:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2014/10/14/grch37-v-slash-s-hg19/#disqus_thread"
+             data-disqus-identifier="http://www.saket-choudhary.me/blog/2014/10/14/grch37-v-slash-s-hg19/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>GRCh37 is <a href="http://seqanswers.com/forums/archive/index.php/t-9757.html">supposedly</a> the NCBI equivalent of UCSC’s hg19.</p>
+
+<p>However the forum posts on are not really convincing.
+There are more insights <a href="http://uswest.ensembl.org/Help/Faq?id=286">here</a></p>
+
+<p>Condensing:</p>
+
+<p>Point #1: Ensembl uses a one-based coordinate system, whereas UCSC uses a zero-based coordinate system.</p>
+
+<pre><code>    Ensembl:  ATCG
+              1234
+    UCSC:     ATCG
+              0123
+</code></pre>
+
+<p>For display UCSC browser <a href="http://genome.ucsc.edu/FAQ/FAQtracks.html#tracks1">uses 1-based coordinate system</a>.</p>
+
+<p>Point #2: Ensembl uses the most recently updated human genome housed at the GRC.
+This current major assembly release is called GRCh38. NCBI and UCSC use the same genome.
+UCSC refers to the recent human genome as GRCh38/hg38. Before all that let’s see what these coordinate sytems
+are all about. Blatantly copying from the SAM1 specification[http://samtools.github.io/hts-specs/SAMv1.pdf]:</p>
+
+<blockquote>
+  <p>1-based coordinate system: A coordinate system where the first base of a sequence is one. In this
+coordinate system, a region is specified by a closed interval. For example, the region between
+the 3rd and the 7th bases inclusive is [3, 7]. The SAM, VCF, GFF and Wiggle formats are using
+the 1-based coordinate system.</p>
+</blockquote>
+
+<blockquote>
+  <p>0-based coordinate system: A coordinate system where the first base of a sequence is zero. In this
+coordinate system, a region is specified by a half-closed-half-open interval. For example, the
+region between the 3rd and the 7th bases inclusive is [2, 7). The BAM, BCFv2, BED, and PSL
+formats are using the 0-based coordinate system.]</p>
+</blockquote>
+
+<p>Let’s take an example here:</p>
+
+<pre><code>    chrX  	|  A  |  T  |  G  |  C  |  A  |  T  |  C  |  G  |
+    0-based	0  |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8
+    1-based    1	     2     3     4     5     6     7     8
+</code></pre>
+
+<p>So expanding from the SAM1 specifications,</p>
+
+<ol>
+  <li>
+    <p>Ranged nucleotides will be represented as:</p>
+
+    <p>i) 0-based chrX:2-7 GCATC  <br />
+ii) 1-based chrX:3-7 GCATC</p>
+  </li>
+  <li>
+    <p>From point 1. a single nucleotide is represented as:</p>
+
+    <p>i) 0-based chrX:7-8 G  <br />
+ ii) 1-based chrX:8-8 G</p>
+  </li>
+  <li>
+    <p>SNPs will be:</p>
+
+    <p>i) 0-based chrX:7-8 G/A<br />
+ ii) 1-based chrX:8-8 G/A</p>
+
+    <p>Insertions and deletions are tricky:</p>
+
+    <pre><code> chrX        |  A  |  T  |  G  |  C  |  A  |  T  |  C  |  C  |  ATC  G  |
+ 0-based     0  |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8       |  9
+ 1-based        1     2     3     4     5     6     7     8          9
+</code></pre>
+  </li>
+</ol>
+
+<p>ATC is inserted in between C &amp; G of the original sequence.</p>
+
+<ol>
+  <li>
+    <p>INSertions:</p>
+
+    <p>i) 0-based chrX:8-8 -/ATC  <br />
+ii) 1-based chrX:8-9 -/ATC</p>
+  </li>
+  <li>
+    <p>DELetion:</p>
+
+    <p>i) 0-based chrX:4-5 A/-  <br />
+ii) 1-based chrX:5-5 A/-</p>
+  </li>
+</ol>
+
+<p>Example [https://code.google.com/p/bedtools/wiki/FAQ#What_does_zero-based,_half-open_mean?]: </p>
+
+<pre><code>$ cat first_base.bed
+chr1    0       1       i-am-the-first-position-on-chrom1
+</code></pre>
+
+<p>Given the examples the conversion is straightforward:</p>
+
+<pre><code>For nucleotides, SNP, DEL:
+        (1-based start) = (0-based start + 1)
+        (1-based end)   = (0-based end)
+For insertion:
+        (1-based start) = (0-based start)
+        (1-based end)   = (0-based end + 1)
+</code></pre>
+
+<p>Why a 0-based system?
+It makes the calculations simple:
+Consider chrX0-2 ATC &amp; chrX1-4 ATCG</p>
+
+<pre><code>ATC
+ ATCG
+Length of overlap = min(end1, end2) - max(start1, start2) = 2-0 = 2 Whereas for a 1-based system:
+   
+chrX1-3 ATC &amp; chrX2-5 ATCG
+ATC
+ ATCG
+Length of overlap = min(end1, end2) - max(start1, start2) = 3-2 = 1 =&gt; WRONG! Why? You need to add 1
+</code></pre>
+
+<p>It is intuitive if you think of the numbers between(including) 1 &amp; 5 is  5-1+1=5! [1,2,3,4,5]</p>
+
+<p>An important note for uploading data to UCSC Genome browser:
+&gt; If you submit data to the browser in position format (chr#:##-##), the browser assumes this information is 1-based. If you submit data in any other format (BED (chr# ## ##) or otherwise), the browser will assume it is 0-based.You can see this both in our liftOver utility and in our search bar, by entering the same numbers in position or BED format and observing the results. Similarly, any data returned by the browser in position format is 1-based, while data returned in BED format is 0-based.</p>
+
+<p>Coming back to hg19 and GRCh37 stuff,</p>
+
+<p>The GRCh37 assembly defintion is at: ftp://ftp.ncbi.nlm.nih.gov/genomes/ASSEMBLY_REPORTS/All/GCF_000001405.13.assembly.txt</p>
+
+<p>Besides Chromosomes 1-22, there are these things called ‘unlocalized-scaffold’ and ‘unplaced-scaffold’.</p>
+
+<p>Let’s head over to the definitions of the Consortium: http://www.ncbi.nlm.nih.gov/projects/genome/assembly/grc/info/definitions.shtml</p>
+
+<pre><code>**unlocalized-scaffold**:
+A sequence found in an assembly that is associated with a specific chromosome but cannot be ordered or oriented on that chromosome.
+e.g HSCHR17_RANDOM_CTG2 associated with chromosome 17, but cannot be oriented on it
+
+**unplaced-scaffold**:
+A sequence found in an assembly that is not associated with any chromosome.
+e.g. HSCHRUN_RANDOM_CTG2
+</code></pre>
+
+<p>hg19 equivalent <a href="http://genome.ucsc.edu/FAQ/FAQdownloads.html#download12">definitions</a>, and corresponding <a href="http://hgdownload.cse.ucsc.edu/goldenpath/hg19/chromosomes/">data</a></p>
+
+<pre><code>**chrN_random_[table]**:
+In the past, these tables contained data related to sequence that is known to be in a particular chromosome, but could not be reliably ordered within the current sequence.
+E.g. chr21_gl000210_random.fa.gz
+</code></pre>
+
+<p><strong>ChrUn:</strong>
+    ChrUn contains clone contigs that can’t be confidently placed on a specific chromosome.
+    E.g  chrUn_gl000237</p>
+
+<p>Another note:</p>
+
+<p>UCSC’s hg19 has chrM as the mitochondiral DNA.
+&gt; Note on chrM: Since the release of the UCSC hg19 assembly, the Homo sapiens mitochondrion sequence (represented as “chrM” in the Genome Browser) has been replaced in GenBank with the record NC_012920. We have not replaced the original sequence, NC_001807, in the hg19 Genome Browser. We plan to use the Revised Cambridge Reference Sequence (rCRS, http://mitomap.org/bin/view.pl/MITOMAP/HumanMitoSeq) in the next human assembly release</p>
+
+<p>In order to verify that they indeed have atleast the same chromosome lenths I hacked this simple script.</p>
+
+<div><script src="https://gist.github.com/c4a9304db58360972934.js"></script>
+<noscript><pre><code>from Bio import SeqIO
+import pickle
+from pprint import pprint
+import sys
+hg19_location = &quot;/usr/local/share/bcbio/genomes/Hsapiens/hg19/hg19.fa&quot;
+grch37_location = &quot;/usr/local/share/bcbio/genomes/Hsapiens/GRCh37/bowtie/GRCh37.fa&quot;
+try:
+    pickled = pickle.load(open(&#39;comparison_pickled.p&#39;, &#39;rb&#39;))
+    print (pickled)
+    sys.exit(0)
+except Exception as e:
+    print e
+hg19_handle = open(hg19_location, &#39;rU&#39;)
+hg19_chromosomes = {}
+for record in SeqIO.parse(hg19_handle,  &#39;fasta&#39;):
+    hg19_chromosomes[record.id] = len(record)
+hg19_handle.close()
+
+
+grch37_handle = open(grch37_location, &#39;rU&#39;)
+grch37_chromosomes = {}
+for record in SeqIO.parse(grch37_handle, &#39;fasta&#39;):
+    grch37_chromosomes[record.id] = len(record)
+grch37_handle.close()
+
+
+pickle_string = &quot;GRCh37\n&quot;
+for key, value in grch37_chromosomes.iteritems():
+    pickle_string +=  key + &quot;:&quot;  + str(value) + &quot;\n&quot;
+
+pickle_string += &quot;\nhg19\n&quot;
+for key, value in hg19_chromosomes.iteritems():
+    pickle_string +=  key + &quot;:&quot; + str(value) + &quot;\n&quot;
+
+
+for i in range(1,23):
+    pickle_string += str(i) + &quot; =&gt; &quot; + &quot;GRCh37: &quot; + str(grch37_chromosomes[str(i)]) + &quot; || hg19: &quot; + str(hg19_chromosomes[&#39;chr&#39; + str(i)]) + &quot;\n&quot;
+    assert(grch37_chromosomes[str(i)] == hg19_chromosomes[&#39;chr&#39; + str(i)])
+pickle.dump(pickle_string, open(&#39;comparison_pickled.p&#39;, &#39;wb&#39;))
+</code></pre></noscript></div>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/10/12/library-size/">Library Size, Fragment Size, Insert Size</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-10-12T13:51:01-07:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2014/10/12/library-size/#disqus_thread"
+             data-disqus-identifier="http://www.saket-choudhary.me/blog/2014/10/12/library-size/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Bioinformatics has always been plagued with terms with multi-definitions for the same term. The FastQ format for example remained undocumented until Peter Cock et al. published <a href="http://nar.oxfordjournals.org/content/38/6/1767.long">The Sanger FASTQ file format for sequences with quality scores, and the Solexa/Illumina FASTQ variants</a> </p>
+
+<p>I will try to cover a detailed explanation of the following terms , which I have often found to be confusing, thanks to the lack of cohesiveness in Bioinformatics:</p>
+
+<ul>
+  <li>library size</li>
+  <li>fragment size</li>
+  <li>insert size</li>
+</ul>
+
+<p><a href="http://samtools.github.io/hts-specs/SAMv1.pdf">SAMv1 specification</a> defines a ‘TLEN’ term in the alignment section:
+&gt; TLEN: signed observed Template LENgth. If all segments are mapped to the same reference, the unsigned observed template length equals the number of bases from the leftmost mapped base to the rightmost mapped base. The leftmost segment has a plus sign and the rightmost has a minus sign. The sign of segments in the middle is undefined. It is set as 0 for single-segment template or when the information is unavailable.</p>
+
+<p>Going by this definition the ‘insert size’ <em>should</em> mean: The total length of the original <em>piece</em>  being sequenced(without adapters!).
+Let’s pick an example from <a href="http://seqanswers.com/forums/showthread.php?t=13098">Seqanswers</a>, slightly modified here. Reads R_1 and R_2 are paired end reads, sequencing the same sequence from two opposite ends. We want to sequence the ‘<em>Piece to be Sequenced</em>’.</p>
+
+<pre><code>Piece to be Sequenced:                       |=====50=====|==========150==========|=====50=====|
+Fragment=Piece + Sequencing Adapters: |~~20~~|=====50=====|==========150==========|=====50=====|~~20~~|    
+Reads(Paired End):                           |-----------&gt;|                       |&lt;-----------|    
+                                                  R_1                                  R_2
+Inner Mate Distance:                                      |==========150==========|         
+</code></pre>
+
+<p>Sequencing chops the DNA into shorter <em>pieces</em>, and these <em>pieces</em> are ligated with adapter sequences.Though we started with <code>Piece to be sequenced</code> it was ligated with sequencing adapters on both sides.<br />
+The original sequence that was supposed to be sequenced was (50+150+50=) 250 bp long. However while the DNA was cut, the ligation step added extra bases at both ends of this <em>piece</em> so that it is now (20+50+150+50+20=) 290 bp long and this ‘piece+ligated sequence adapters’ are called ‘Fragment’(This is the reason I chose the word <em>‘piece’</em> to denote the part of DNA to be sequenced). Generally sequencing begins after adapter sequences. This is the reason R_1 and R_2 do not cover the 20 bp adapter sequences. In any case I assume the reads have been trimmed to remove the adapter sequences. The 150 bp sequence that is left <em>unsequenced</em> here is the distance between mate pairs, or the Inner Mate Distance.</p>
+
+<p>Summarizing with respect to the above example:</p>
+
+<pre><code>    Insert Size      = 50+150+50        = 250
+    Fragment Size    = 20+50+150+50+20  = 290 
+    Library Size     = 20+50+150+50+20  = 290
+    Inner Mate Distance                 = 150            
+</code></pre>
+
+<p>Condensing:</p>
+
+<pre><code>    Insert           = Sequence without the adapters(The original DNA chunk)
+    Fragment         = Insert Size + Right/Left flanking adapters
+    Inner Mate       = Gap between the mate pair reads
+</code></pre>
+
+<p>Reference:
+<a href="http://seqanswers.com/forums/showthread.php?t=13098">Seqanswers</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+   
+  
+    
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2016 - Saket Choudhary -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'teksophere';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+<script>
+  $(document).ready(function() {  
+  var stickyNavTop = $('nav').offset().top;  
+    
+  var stickyNav = function(){  
+  var scrollTop = $(window).scrollTop();  
+         
+  if (scrollTop > stickyNavTop) {   
+      $('nav').addClass('sticky');  
+  } else {  
+      $('nav').removeClass('sticky');   
+  }  
+  };  
+    
+  stickyNav();  
+    
+  $(window).scroll(function() {  
+      stickyNav();  
+  });  
+  });  
+</script>
+
+
+</body>
+</html>
