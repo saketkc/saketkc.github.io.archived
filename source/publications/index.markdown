@@ -11,6 +11,12 @@ Google Scholar: [https://scholar.google.com/citations?user=BmC4P-oAAAAJ](https:/
 
 ## Journal/Conference
 
+- Rahman, S.A., Torrance, G., Baldacci, L., Cuesta, S.M., Fenninger, F., Gopal, N., *Choudhary, S.*, May, J.W., Holliday, G.L., Steinbeck, C. and Thornton, J.M., 2016. Reaction Decoder Tool (RDT): extracting features from chemical reactions. Bioinformatics,
+[http://dx.doi.org/10.1093/bioinformatics/btw096](http://dx.doi.org/10.1093/bioinformatics/btw096)  [PDF](http://bioinformatics.oxfordjournals.org/content/early/2016/03/26/bioinformatics.btw096.full.pdf)
+
+- Syed, P., Gupta, S., *Choudhary, S.*, Pandala, N. G., Atak, A., Richharia, A., & Moiyadi, A. (2015). Autoantibody profiling of glioma serum samples to identify biomarkers using human proteome arrays. Scientific reports, 5.
+[https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4570193/](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4570193/) [PDF](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4570193/pdf/srep13895.pdf)
+
 - Yachdav G, Goldberg T, Wilzbach S, Dao D, Shish I, _Choudhary S_, et al. Anatomy of BioJS, an open source community for the life sciences. eLife. 2015;4:e07009.
 [http://dx.doi.org/10.7554/eLife.07009](http://dx.doi.org/10.7554/eLife.07009) [PDF](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4495654/pdf/elife07009.pdf)
 
@@ -29,8 +35,3 @@ Google Scholar: [https://scholar.google.com/citations?user=BmC4P-oAAAAJ](https:/
 
 - Choudhary, S. Pattern Recognition in Clinical Data
   [http://dx.doi.org/10.6084/m9.figshare.1089638](http://dx.doi.org/10.6084/m9.figshare.1089638]) [PDF](http://www-scf.usc.edu/~skchoudh/files/thesis.pdf)
-
-
-
-
-
