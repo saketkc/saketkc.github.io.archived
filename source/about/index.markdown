@@ -6,8 +6,9 @@ comments: true
 sharing: true
 footer: true
 ---
-I am a second year PhD student studying Computational Biology and
+I am a third year PhD student studying Computational Biology and
 Bioinformatics at [University of Southern California](http://www.usc.edu).
+I am trying to decode gene regulation. Of course, [in the light of evolution](https://en.wikipedia.org/wiki/Nothing_in_Biology_Makes_Sense_Except_in_the_Light_of_Evolution)
 
 I am more active on my Math Blog, [Piddling-Pertinent](http://saket-choudhary.me/pertinent-blog)
 
