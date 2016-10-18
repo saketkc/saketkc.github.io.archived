@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Publications"
-date: 2015-06-24 23:31
+date: 2016-10-18 23:31
 comments: true
 sharing: true
 footer: true
