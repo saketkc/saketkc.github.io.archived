@@ -9,8 +9,8 @@
   <meta name="author" content="Saket Choudhary">
   <meta name="google-site-verification" content="a56hrMS1KM6u5S1BBjobvquWlsQHJ7lUruPBF6B1rJM" />
   
-  <meta name="description" content="DNA Sequence Motifs are recurring patterns in DNA that are associated with some biological function.
-They are encountered quite frequently while &hellip;">
+  <meta name="description" content="A motif in a DNA sequence represents a short, recurring pattern that often has biological
+implications[1]. They often play role as specific binding &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -93,50 +93,6 @@ MathJax.Hub.Config({
     <div id="content">
       <div class="blog-index">
   
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2016/01/11/motif-logos/">Motif Logos</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2016-01-11T00:02:05-08:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2016/01/11/motif-logos/#disqus_thread"
-             data-disqus-identifier="http://www.saket-choudhary.me/blog/2016/01/11/motif-logos/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>DNA Sequence Motifs are recurring patterns in DNA that are associated with some biological function.
-They are encountered quite frequently while studying transcription regulation. 
-Transcription factor binding is DNA sequence specific. The TF protein’s binding to DNA
-depends is dependent on the specificity of DNA binding. This kind of sequence specific
-binding also happens in other processes such as the     </p>
-
-</div>
-  
-  
-
-
-    </article>
   
   
     <article>
@@ -487,21 +443,21 @@ import sys
 hg19_location = &quot;/usr/local/share/bcbio/genomes/Hsapiens/hg19/hg19.fa&quot;
 grch37_location = &quot;/usr/local/share/bcbio/genomes/Hsapiens/GRCh37/bowtie/GRCh37.fa&quot;
 try:
-    pickled = pickle.load(open('comparison_pickled.p', 'rb'))
+    pickled = pickle.load(open(&#39;comparison_pickled.p&#39;, &#39;rb&#39;))
     print (pickled)
     sys.exit(0)
 except Exception as e:
     print e
-hg19_handle = open(hg19_location, 'rU')
+hg19_handle = open(hg19_location, &#39;rU&#39;)
 hg19_chromosomes = {}
-for record in SeqIO.parse(hg19_handle,  'fasta'):
+for record in SeqIO.parse(hg19_handle,  &#39;fasta&#39;):
     hg19_chromosomes[record.id] = len(record)
 hg19_handle.close()
 
 
-grch37_handle = open(grch37_location, 'rU')
+grch37_handle = open(grch37_location, &#39;rU&#39;)
 grch37_chromosomes = {}
-for record in SeqIO.parse(grch37_handle, 'fasta'):
+for record in SeqIO.parse(grch37_handle, &#39;fasta&#39;):
     grch37_chromosomes[record.id] = len(record)
 grch37_handle.close()
 
@@ -516,9 +472,9 @@ for key, value in hg19_chromosomes.iteritems():
 
 
 for i in range(1,23):
-    pickle_string += str(i) + &quot; =&gt; &quot; + &quot;GRCh37: &quot; + str(grch37_chromosomes[str(i)]) + &quot; || hg19: &quot; + str(hg19_chromosomes['chr' + str(i)]) + &quot;\n&quot;
-    assert(grch37_chromosomes[str(i)] == hg19_chromosomes['chr' + str(i)])
-pickle.dump(pickle_string, open('comparison_pickled.p', 'wb'))
+    pickle_string += str(i) + &quot; =&gt; &quot; + &quot;GRCh37: &quot; + str(grch37_chromosomes[str(i)]) + &quot; || hg19: &quot; + str(hg19_chromosomes[&#39;chr&#39; + str(i)]) + &quot;\n&quot;
+    assert(grch37_chromosomes[str(i)] == hg19_chromosomes[&#39;chr&#39; + str(i)])
+pickle.dump(pickle_string, open(&#39;comparison_pickled.p&#39;, &#39;wb&#39;))
 </code></pre></noscript></div>
 
 </div>
